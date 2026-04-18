@@ -1,6 +1,8 @@
-# SE Wisconsin Business Automation
+# Brew City Automation
 
-Marketing site: AI automation consulting and local SEO for businesses in **Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth Counties**. Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), deployed on [Netlify](https://www.netlify.com/) with [Netlify Forms](https://docs.netlify.com/forms/setup/).
+Marketing site: AI automation consulting and local SEO for businesses in **Milwaukee** and **seven southeastern Wisconsin counties** (Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, Walworth). Built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/), deployed on [Netlify](https://www.netlify.com/) with [Netlify Forms](https://docs.netlify.com/forms/setup/).
+
+**Canonical domain in code:** `https://brewcityautomation.com` — update `astro.config.mjs` and `src/data/site.ts` if you use a different primary URL.
 
 ## Develop
 
@@ -30,7 +32,7 @@ Netlify sets `ASTRO_TELEMETRY_DISABLED=1` in `netlify.toml` for this reason.
 2. In Netlify: **Add new site** → **Import an existing project** → pick the repo.
 3. Build settings: **Build command** `npm run build`, **Publish directory** `dist`.
 4. After the first deploy, open **Site configuration → Forms** and confirm forms were detected. Set notification email to `thomas@vaccaromarketing.digital` (or your preferred inbox).
-5. **Domain**: connect your domain under **Domain management** and follow DNS instructions from your registrar. (Canonical site URL in code is currently `https://mkerank.com` in `astro.config.mjs` and `src/data/site.ts`—update both when you change domains.)
+5. **Domain**: connect **brewcityautomation.com** (or your domain) under **Domain management** and follow DNS instructions from your registrar.
 
 ## Forms
 

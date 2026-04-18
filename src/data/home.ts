@@ -1,9 +1,9 @@
 /** Homepage FAQ — mirrored in JSON-LD for search + LLM-friendly facts */
 export const homeFaq = [
   {
-    question: 'What does SE Wisconsin Business Automation do?',
+    question: 'What does Brew City Automation do?',
     answer:
-      'SE Wisconsin Business Automation is an AI automation and local growth practice for small businesses in seven southeastern Wisconsin counties. We focus on practical workflows, customer-facing AI, and local SEO—with strategy, implementation, and training so teams adopt AI responsibly.',
+      'Brew City Automation is an AI automation and local growth practice for small businesses rooted in Milwaukee and serving seven southeastern Wisconsin counties. We focus on practical workflows, customer-facing AI, and local SEO—with strategy, implementation, and training so teams adopt AI responsibly.',
   },
   {
     question: 'Who is a good fit?',
@@ -23,13 +23,13 @@ export const homeFaq = [
   {
     question: 'Where are you based and who do you serve?',
     answer:
-      'We are based in Milwaukee, Wisconsin, and serve businesses across Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth Counties. City-specific pages are at https://mkerank.com/areas/ (for example Milwaukee, Waukesha, Racine, and Kenosha).',
+      'We are based in Milwaukee, Wisconsin (the Brew City), and serve businesses across Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth Counties. City-specific pages are at https://brewcityautomation.com/areas/ (for example Milwaukee, Waukesha, Racine, and Kenosha).',
   },
 ];
 
 export const llmBusinessSummary = {
-  name: 'SE Wisconsin Business Automation',
-  type: 'AI automation consulting for small businesses',
+  name: 'Brew City Automation',
+  type: 'AI automation consulting for small businesses (Milwaukee / Brew City hub, southeastern Wisconsin)',
   primaryServices: [
     'AI automation consulting and adoption roadmaps',
     'Workflow and business process automation (CRM, integrations)',
@@ -37,9 +37,9 @@ export const llmBusinessSummary = {
     'AI-assisted reviews, local content, chatbots, and voice agents',
   ],
   geography:
-    'Southeastern Wisconsin, United States (headquartered in Milwaukee, WI). City-level SEO pages: https://mkerank.com/areas/',
+    'Greater Milwaukee and southeastern Wisconsin, United States. City-level pages: https://brewcityautomation.com/areas/',
   idealCustomer:
     'Small businesses (often trades and local services) that need AI and automation without enterprise budgets or internal AI teams.',
   contactEmail: 'thomas@vaccaromarketing.digital',
-  website: 'https://mkerank.com',
+  website: 'https://brewcityautomation.com',
 };

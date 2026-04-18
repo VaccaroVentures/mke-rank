@@ -42,7 +42,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'We are tool-agnostic: the right stack is the one your people will actually use and maintain.',
-    seoTitle: 'AI Automation Consulting for Small Business | SE Wisconsin Business Automation',
+    seoTitle: 'AI Automation Consulting for Small Business | Brew City Automation',
     seoDescription:
       'Fractional AI automation consulting for small businesses in SE Wisconsin: roadmaps, governance, pilots, and implementation—human-in-the-loop by design.',
     keywords: [
@@ -98,7 +98,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'We avoid brittle automations: if a Zap fails silently, you lose money—we design for visibility.',
-    seoTitle: 'Small Business Workflow Automation & CRM Integration | SE Wisconsin Business Automation',
+    seoTitle: 'Small Business Workflow Automation & CRM Integration | Brew City Automation',
     seoDescription:
       'Workflow and business process automation for small teams: CRM, scheduling, email, and operations integrations with Zapier, Make, and native APIs.',
     keywords: [
@@ -154,7 +154,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'We follow Google quality guidelines—no doorway pages, no fake reviews, no risky link schemes.',
-    seoTitle: 'Local SEO Services for Small Business | Milwaukee Area | SE Wisconsin Business Automation',
+    seoTitle: 'Local SEO Services for Small Business | Milwaukee Area | Brew City Automation',
     seoDescription:
       'Professional local SEO services for small businesses: map pack strategy, on-site optimization, citations, and reporting—serving Milwaukee, Waukesha, and SE Wisconsin.',
     keywords: [
@@ -210,7 +210,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'We never publish unreviewed claims about safety, licensing, or warranties.',
-    seoTitle: 'Google Business Profile Optimization & AI Posts | SE Wisconsin Business Automation',
+    seoTitle: 'Google Business Profile Optimization & AI Posts | Brew City Automation',
     seoDescription:
       'Google Business Profile optimization with AI-assisted posts, Q&A, and updates—human-approved for local small businesses in Wisconsin.',
     keywords: [
@@ -266,7 +266,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'We discourage incentivized or filtered reviews—sustainable reputation beats risky shortcuts.',
-    seoTitle: 'AI Review Management & Online Reputation | Small Business | SE Wisconsin Business Automation',
+    seoTitle: 'AI Review Management & Online Reputation | Small Business | Brew City Automation',
     seoDescription:
       'AI-assisted review management for small businesses: ethical requests, faster replies, and reputation workflows integrated with your operations.',
     keywords: [
@@ -322,7 +322,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'AI drafts speed production; your expertise is what makes content rank and convert.',
-    seoTitle: 'AI Local Content Writing & SEO Pages | SE Wisconsin Business Automation',
+    seoTitle: 'AI Local Content Writing & SEO Pages | Brew City Automation',
     seoDescription:
       'AI-assisted local content for SEO: service-area pages, FAQs, and blog posts edited by humans—built for small businesses competing locally.',
     keywords: [
@@ -378,7 +378,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'We set expectations: AI assists humans and must not give unsafe instructions.',
-    seoTitle: 'AI Chatbot for Lead Capture | Small Business Website | SE Wisconsin Business Automation',
+    seoTitle: 'AI Chatbot for Lead Capture | Small Business Website | Brew City Automation',
     seoDescription:
       'AI lead capture chatbots for small business websites: qualify visitors, book appointments, and integrate with email or CRM—human handoff included.',
     keywords: [
@@ -434,7 +434,7 @@ export const aiServiceDetails: Record<string, AIServiceDetail> = {
     ],
     stackNote:
       'Voice AI requires transparent recording/consent practices—we align with applicable laws.',
-    seoTitle: 'AI Voice Agent & Call Answering Service | Small Business | SE Wisconsin Business Automation',
+    seoTitle: 'AI Voice Agent & Call Answering Service | Small Business | Brew City Automation',
     seoDescription:
       'AI call handling and voice agents for small businesses: after-hours answering, intake, and structured handoff to your team—Wisconsin-based consulting.',
     keywords: [

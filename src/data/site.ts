@@ -1,13 +1,13 @@
 export const site = {
-  name: 'SE Wisconsin Business Automation',
-  /** Stacked logo lines (equals full `name`) */
-  nameLine1: 'SE Wisconsin',
-  nameLine2: 'Business Automation',
+  name: 'Brew City Automation',
+  /** Stacked header lockup (equals full brand) */
+  nameLine1: 'Brew City',
+  nameLine2: 'Automation',
   tagline:
-    'AI automation & local SEO for businesses in Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington & Walworth Counties',
+    'AI automation & local SEO for businesses in Milwaukee and seven southeastern Wisconsin counties',
   longDescription:
-    'SE Wisconsin Business Automation helps small businesses across seven southeastern Wisconsin counties adopt practical AI: human-in-the-loop workflows, customer-facing AI, and local SEO that saves time and wins nearby customers.',
-  url: 'https://mkerank.com',
+    'Brew City Automation helps small businesses across Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth Counties adopt practical AI: human-in-the-loop workflows, customer-facing AI, and local SEO that saves time and wins nearby customers.',
+  url: 'https://brewcityautomation.com',
   email: 'thomas@vaccaromarketing.digital',
   region: 'Southeastern Wisconsin',
 } as const;

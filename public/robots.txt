@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mkerank.com/sitemap-index.xml
+Sitemap: https://brewcityautomation.com/sitemap-index.xml

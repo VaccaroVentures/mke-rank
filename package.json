@@ -1,9 +1,9 @@
 {
-  "name": "mke-rank",
+  "name": "brew-city-automation",
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "SE Wisconsin Business Automation — AI automation & local SEO for businesses in seven SE Wisconsin counties",
+  "description": "Brew City Automation — AI automation & local SEO for Milwaukee-area and southeastern Wisconsin businesses",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
