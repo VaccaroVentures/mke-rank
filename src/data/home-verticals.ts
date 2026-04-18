@@ -15,7 +15,7 @@ export const homeVerticalDetails: Record<string, HomeVerticalDetail> = {
     title: 'HVAC',
     headline: 'Local SEO & AI systems built for heating & cooling demand swings',
     intro:
-      'HVAC is urgency-driven and seasonal. MKE Rank pairs Google Business Profile optimization with AI workflows for reviews, seasonal offers, and service-area pages—so you show up when homeowners search “AC repair near me” or “furnace tune-up” across SE Wisconsin.',
+      'HVAC is urgency-driven and seasonal. SE Wisconsin Business Automation pairs Google Business Profile optimization with AI workflows for reviews, seasonal offers, and service-area pages—so you show up when homeowners search “AC repair near me” or “furnace tune-up” across SE Wisconsin.',
     painPoints: [
       'Thin or duplicate city pages that do not match how people actually search in Milwaukee suburbs.',
       'Missed after-hours leads when dispatch is busy—GBP and chat need to work together.',

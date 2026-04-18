@@ -17,7 +17,7 @@ const pageUrls = localCities.map((c) => new URL(`/areas/${c.slug}/`, site.url).t
 const jsonLd = [
   localBusinessSchema(),
   itemListSchema({
-    name: 'MKE Rank southeastern Wisconsin service areas',
+    name: 'SE Wisconsin Business Automation — southeastern Wisconsin service areas',
     description:
       'City-level pages for AI automation consulting and local SEO across Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth counties.',
     urls: pageUrls,
@@ -26,8 +26,8 @@ const jsonLd = [
 ---
 
 <BaseLayout
-  title="SE Wisconsin Service Areas | MKE Rank"
-  description="MKE Rank serves small businesses across southeastern Wisconsin. Explore city-level pages for Milwaukee, Waukesha, Racine, Kenosha, and more—AI automation, workflows, and local SEO."
+  title="SE Wisconsin Service Areas | SE Wisconsin Business Automation"
+  description="SE Wisconsin Business Automation serves businesses in Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth Counties. Explore city-level pages for automation, workflows, and local SEO."
   keywords="Milwaukee AI consultant, Waukesha automation, Racine local SEO, Kenosha small business, Wisconsin service areas"
   jsonLd={jsonLd}
 >

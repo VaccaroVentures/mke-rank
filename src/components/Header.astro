@@ -9,12 +9,12 @@ const phoneLink = telHref();
   class="sticky top-0 z-50 border-b border-badger/8 bg-paper/90 shadow-[0_1px_0_rgba(7,10,8,0.04)] backdrop-blur-md"
 >
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 md:px-6">
-    <a href="/" class="group flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-3">
-      <span class="font-display text-xl font-semibold tracking-tight text-ink md:text-2xl">
-        {site.name}
+    <a href="/" class="group flex flex-col gap-0 leading-tight" aria-label={site.name}>
+      <span class="font-display text-base font-semibold tracking-tight text-ink sm:text-lg">
+        {site.nameLine1}
       </span>
-      <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-badger/50 sm:text-xs">
-        AI automation consulting
+      <span class="font-display text-[11px] font-semibold uppercase tracking-[0.14em] text-badger/55 sm:text-xs">
+        {site.nameLine2}
       </span>
     </a>
     <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Main">
