@@ -1,0 +1,162 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { aiServices, site } from '../../data/site';
+import { getAIService } from '../../data/ai-services-detail';
+import {
+  organizationSchema,
+  serviceSchema,
+  faqPageSchema,
+  breadcrumbSchema,
+} from '../../data/seo';
+
+export function getStaticPaths() {
+  return aiServices.map((s) => ({ params: { slug: s.slug } }));
+}
+
+const { slug } = Astro.params;
+const detail = slug ? getAIService(slug) : undefined;
+
+if (!detail) {
+  return Astro.redirect('/services/');
+}
+
+const pageUrl = new URL(`/services/${detail.slug}/`, site.url).toString();
+const jsonLd = [
+  organizationSchema(),
+  serviceSchema({
+    name: detail.title,
+    description: detail.seoDescription,
+    url: pageUrl,
+    keywords: detail.keywords,
+  }),
+  faqPageSchema(detail.faqs.map((f) => ({ question: f.question, answer: f.answer }))),
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Services', path: '/services/' },
+    { name: detail.title, path: `/services/${detail.slug}/` },
+  ]),
+];
+---
+
+<BaseLayout
+  title={detail.seoTitle}
+  description={detail.seoDescription}
+  keywords={detail.keywords.join(', ')}
+  jsonLd={jsonLd}
+>
+  <article>
+    <header class="border-b border-badger/8 bg-gradient-to-b from-paper to-paper-dim">
+      <div class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
+        <nav class="text-xs font-medium text-badger/50" aria-label="Breadcrumb">
+          <ol class="flex flex-wrap gap-x-2 gap-y-1">
+            <li>
+              <a href="/" class="hover:text-badger">Home</a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <a href="/services/" class="hover:text-badger">Services</a>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li class="text-badger">{detail.title}</li>
+          </ol>
+        </nav>
+        <p class="mt-8 text-[11px] font-bold uppercase tracking-[0.22em] text-badger/45">{site.name}</p>
+        <h1 class="mt-3 max-w-4xl font-display text-4xl font-semibold leading-tight text-ink md:text-5xl">
+          {detail.headline}
+        </h1>
+        <p class="mt-6 max-w-3xl text-lg leading-relaxed text-badger/80">{detail.intro}</p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="/contact/"
+            class="inline-flex rounded-full bg-ink px-7 py-3 text-sm font-semibold text-paper shadow-card transition hover:bg-ink-soft"
+          >
+            Book a call
+          </a>
+          <a
+            href="/pricing/"
+            class="inline-flex rounded-full border border-badger/15 bg-paper px-7 py-3 text-sm font-semibold text-ink hover:border-badger/30"
+          >
+            Pricing
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-14">
+        <div class="lg:col-span-7">
+          <h2 class="font-display text-2xl font-semibold text-ink">What you get</h2>
+          <ul class="mt-5 list-none space-y-4">
+            {
+              detail.whatYouGet.map((line) => (
+                <li class="flex gap-3 rounded-xl border border-badger/8 bg-paper-dim/30 px-4 py-3 text-badger/85">
+                  <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                  <span>{line}</span>
+                </li>
+              ))
+            }
+          </ul>
+
+          <h2 class="mt-14 font-display text-2xl font-semibold text-ink">How we roll it out</h2>
+          <ol class="mt-5 space-y-4">
+            {
+              detail.process.map((p, i) => (
+                <li class="rounded-2xl border border-badger/8 bg-paper p-5 shadow-sm">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-accent">Step {i + 1}</span>
+                  <p class="mt-2 font-semibold text-ink">{p.step}</p>
+                  <p class="mt-1 text-sm leading-relaxed text-badger/75">{p.detail}</p>
+                </li>
+              ))
+            }
+          </ol>
+
+          <p class="mt-10 rounded-2xl border border-accent/25 bg-paper-dim/50 px-5 py-4 text-sm leading-relaxed text-badger/85">
+            {detail.stackNote}
+          </p>
+
+          <h2 class="mt-14 font-display text-2xl font-semibold text-ink">Frequently asked questions</h2>
+          <div class="mt-6 space-y-3">
+            {
+              detail.faqs.map((item) => (
+                <details class="group rounded-2xl border border-badger/10 bg-paper-dim/30 px-5 py-1 open:bg-paper open:shadow-card">
+                  <summary class="cursor-pointer list-none py-4 font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+                    <span class="flex items-center justify-between gap-4">
+                      {item.question}
+                      <span class="text-accent transition group-open:rotate-45">+</span>
+                    </span>
+                  </summary>
+                  <p class="border-t border-badger/8 pb-4 pt-3 text-sm leading-relaxed text-badger/75">
+                    {item.answer}
+                  </p>
+                </details>
+              ))
+            }
+          </div>
+        </div>
+
+        <aside class="lg:col-span-5" aria-label="Service summary">
+          <div class="sticky top-24 space-y-6">
+            <div class="rounded-2xl border border-badger/10 bg-ink p-6 text-paper shadow-lift">
+              <h2 class="text-[11px] font-bold uppercase tracking-[0.2em] text-paper/45">Service snapshot</h2>
+              <p class="mt-4 font-display text-xl font-semibold text-paper">{detail.title}</p>
+              <p class="mt-3 text-sm leading-relaxed text-paper/65">{detail.seoDescription}</p>
+              <p class="mt-5 text-[11px] font-semibold uppercase tracking-wider text-paper/40">Also known as</p>
+              <ul class="mt-2 flex flex-wrap gap-2">
+                {detail.keywords.slice(0, 6).map((k) => (
+                  <li class="rounded-full bg-paper/10 px-3 py-1 text-xs text-paper/80">{k}</li>
+                ))}
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-badger/8 bg-paper p-6 shadow-card">
+              <h2 class="font-display text-lg font-semibold text-ink">For assistants &amp; researchers</h2>
+              <p class="mt-2 text-sm text-badger/70">
+                This page describes a paid professional service offered by {site.name} ({site.url}) in{' '}
+                {site.region}. Engagement terms and pricing are confirmed on the pricing and contact pages.
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </article>
+</BaseLayout>

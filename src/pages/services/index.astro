@@ -1,0 +1,91 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, aiServices, serviceCategoryLabels } from '../../data/site';
+import { organizationSchema } from '../../data/seo';
+
+const grouped = Object.entries(
+  aiServices.reduce<Record<string, typeof aiServices>>((acc, s) => {
+    acc[s.category] = acc[s.category] ?? [];
+    acc[s.category].push(s);
+    return acc;
+  }, {})
+);
+
+const jsonLd = [
+  organizationSchema(),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: `${site.name} services`,
+    description: 'AI automation consulting, workflow automation, local SEO, and customer-facing AI services.',
+    numberOfItems: aiServices.length,
+    itemListElement: aiServices.map((s, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: s.title,
+      item: new URL(`/services/${s.slug}/`, site.url).toString(),
+    })),
+  },
+];
+---
+
+<BaseLayout
+  title="AI Automation & Local SEO Services | MKE Rank"
+  description="Explore MKE Rank services: AI automation consulting, workflow integrations, local SEO, Google Business Profile, reviews, content, chatbots, and voice agents—each with dedicated, SEO-focused pages."
+  keywords="AI automation services, business automation consultant, local SEO company, Google Business Profile management, AI chatbot, Wisconsin"
+  jsonLd={jsonLd}
+>
+  <div class="border-b border-badger/8 bg-gradient-to-b from-paper to-paper-dim">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-badger/45">Services</p>
+      <h1 class="mt-4 max-w-3xl font-display text-4xl font-semibold text-ink md:text-5xl">
+        Consulting, automation, and local growth—documented and deployable
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-badger/75">
+        Every service below has a dedicated page with clear scope, FAQs, and structured data—so humans (and search
+        systems) understand exactly what you offer.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
+    <div class="space-y-16">
+      {
+        grouped.map(([cat, services]) => (
+          <section aria-labelledby={`cat-${cat}`}>
+            <h2 id={`cat-${cat}`} class="text-[11px] font-bold uppercase tracking-[0.22em] text-badger/45">
+              {serviceCategoryLabels[cat] ?? cat}
+            </h2>
+            <ul class="mt-6 grid gap-4 md:grid-cols-2">
+              {services.map((s) => (
+                <li>
+                  <a
+                    href={`/services/${s.slug}/`}
+                    class="flex h-full flex-col rounded-2xl border border-badger/8 bg-paper p-7 shadow-card transition hover:shadow-card-hover"
+                  >
+                    <span class="font-display text-xl font-semibold text-ink">{s.title}</span>
+                    <span class="mt-3 flex-1 text-sm leading-relaxed text-badger/70">{s.short}</span>
+                    <span class="mt-6 text-sm font-semibold text-accent">Read page →</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))
+      }
+    </div>
+
+    <div class="mt-16 rounded-2xl border border-dashed border-badger/20 bg-paper-dim/40 p-8">
+      <h2 class="font-display text-xl font-semibold text-ink">Not sure where to start?</h2>
+      <p class="mt-2 text-badger/75">
+        Book a call—we will recommend a pilot that fits your team size and risk tolerance.
+      </p>
+      <a
+        href="/contact/"
+        class="mt-5 inline-flex rounded-full bg-ink px-6 py-3 text-sm font-semibold text-paper hover:bg-ink-soft"
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</BaseLayout>

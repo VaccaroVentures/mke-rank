@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased text-badger-700 bg-paper;
+  }
+}
+
+@layer components {
+  .article-markdown h2 {
+    @apply mt-10 font-display text-2xl font-bold text-badger;
+  }
+  .article-markdown p {
+    @apply mt-4 leading-relaxed;
+  }
+  .article-markdown p:first-child {
+    @apply mt-0;
+  }
+  .article-markdown strong {
+    @apply font-semibold text-badger;
+  }
+  .article-markdown ul {
+    @apply mt-4 list-disc space-y-2 pl-5 marker:text-gold;
+  }
+  .article-markdown a {
+    @apply font-medium text-badger underline decoration-gold/70 underline-offset-2 hover:decoration-badger;
+  }
+
+  .glass-header {
+    @apply border-b border-white/10 bg-ink/75 backdrop-blur-xl supports-[backdrop-filter]:bg-ink/55;
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}

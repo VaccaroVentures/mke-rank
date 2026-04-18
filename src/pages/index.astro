@@ -1,0 +1,429 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, aiServices, homeVerticals, counties, serviceCategoryLabels } from '../data/site';
+import { homeFaq, llmBusinessSummary } from '../data/home';
+import { organizationSchema, websiteSchema, faqPageSchema } from '../data/seo';
+
+const grouped = Object.entries(
+  aiServices.reduce<Record<string, typeof aiServices>>((acc, s) => {
+    acc[s.category] = acc[s.category] ?? [];
+    acc[s.category].push(s);
+    return acc;
+  }, {})
+);
+
+const jsonLd = [
+  organizationSchema(),
+  websiteSchema(),
+  faqPageSchema(homeFaq.map((f) => ({ question: f.question, answer: f.answer }))),
+];
+
+const pageKeywords = [
+  'AI automation consulting',
+  'small business automation',
+  'workflow automation',
+  'local SEO services',
+  'Google Business Profile',
+  'Milwaukee',
+  'Wisconsin small business',
+  'AI chatbot',
+  'voice AI',
+].join(', ');
+---
+
+<BaseLayout
+  title="AI Automation Consulting for Small Businesses | MKE Rank"
+  description="MKE Rank helps small businesses adopt AI responsibly: automation consulting, workflow integrations, customer-facing AI, and local SEO—built for owners who need systems, not hype. Based in Wisconsin."
+  keywords={pageKeywords}
+  jsonLd={jsonLd}
+>
+  <article>
+    <!-- Hero -->
+    <section
+      class="relative overflow-hidden bg-ink text-paper"
+      aria-labelledby="hero-heading"
+    >
+      <div class="pointer-events-none absolute inset-0 bg-hero-glow" aria-hidden="true"></div>
+      <div
+        class="pointer-events-none absolute inset-0 bg-grid-fine bg-grid opacity-[0.2]"
+        aria-hidden="true"
+      ></div>
+      <div class="relative mx-auto max-w-6xl px-4 pb-20 pt-16 md:px-6 md:pb-28 md:pt-20">
+        <div class="flex flex-wrap items-center gap-3">
+          <span
+            class="inline-flex items-center rounded-full border border-paper/15 bg-paper/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-paper/55"
+          >
+            Wisconsin · Small business
+          </span>
+          <span class="text-[11px] font-medium text-mint/90">Human-in-the-loop by default</span>
+        </div>
+        <h1
+          id="hero-heading"
+          class="mt-8 max-w-4xl font-display text-4xl font-semibold leading-[1.08] tracking-tight text-balance md:text-6xl md:leading-[1.05]"
+        >
+          AI automation consulting that makes your business look as sharp as it runs
+        </h1>
+        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-paper/72 md:text-xl">
+          Your website should be proof you understand modern operations. We design{' '}
+          <strong class="font-semibold text-paper">workflows, customer AI, and local growth systems</strong> for teams
+          without an enterprise budget—so you save hours, respond faster, and win nearby demand.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a
+            href="/contact/"
+            class="inline-flex items-center justify-center rounded-full bg-paper px-8 py-3.5 text-sm font-semibold text-ink shadow-lift transition hover:bg-paper-dim"
+          >
+            Book a working session
+          </a>
+          <a
+            href="/services/"
+            class="inline-flex items-center justify-center rounded-full border border-paper/25 bg-transparent px-8 py-3.5 text-sm font-semibold text-paper transition hover:border-paper/50 hover:bg-paper/5"
+          >
+            Explore services
+          </a>
+        </div>
+
+        <dl class="mt-16 grid gap-4 sm:grid-cols-3">
+          <div class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-5 backdrop-blur-sm">
+            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-paper/45">Throughput</dt>
+            <dd class="mt-2 font-display text-2xl font-semibold text-paper">Fewer handoffs</dd>
+            <p class="mt-1 text-sm text-paper/55">Automations with logging—not mystery Zaps.</p>
+          </div>
+          <div class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-5 backdrop-blur-sm">
+            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-paper/45">Trust</dt>
+            <dd class="mt-2 font-display text-2xl font-semibold text-paper">Approvals built in</dd>
+            <p class="mt-1 text-sm text-paper/55">AI drafts; humans publish what matters.</p>
+          </div>
+          <div class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-5 backdrop-blur-sm">
+            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-paper/45">Nearby growth</dt>
+            <dd class="mt-2 font-display text-2xl font-semibold text-paper">Local SEO depth</dd>
+            <p class="mt-1 text-sm text-paper/55">Map pack + site + reputation—connected.</p>
+          </div>
+        </dl>
+      </div>
+    </section>
+
+    <!-- Stack credibility -->
+    <section class="border-b border-badger/8 bg-paper py-10" aria-label="Integrations">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <p class="text-center text-[11px] font-bold uppercase tracking-[0.25em] text-badger/40">
+          Plays well with the tools you already pay for
+        </p>
+        <div
+          class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-sm font-semibold text-badger/55"
+        >
+          <span>Google Workspace</span>
+          <span>HubSpot</span>
+          <span>Zapier</span>
+          <span>Make</span>
+          <span>Slack</span>
+          <span>Jobber</span>
+          <span>QuickBooks</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services bento -->
+    <section class="scroll-mt-24 bg-paper py-20 md:py-28" id="services" aria-labelledby="services-heading">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <div class="max-w-3xl">
+          <h2 id="services-heading" class="font-display text-3xl font-semibold text-ink md:text-4xl">
+            Automation consulting + the marketing systems that compound
+          </h2>
+          <p class="mt-4 text-lg text-badger/75">
+            Eight focused services—each with its own SEO-optimized page—so you can buy outcomes, not buzzwords.
+          </p>
+        </div>
+
+        <div class="mt-14 space-y-16">
+          {
+            grouped.map(([cat, services]) => (
+              <div>
+                <h3 class="text-[11px] font-bold uppercase tracking-[0.22em] text-badger/45">
+                  {serviceCategoryLabels[cat] ?? cat}
+                </h3>
+                <div class="mt-6 grid gap-4 md:grid-cols-2 lg:grid-cols-3 lg:gap-5">
+                  {services.map((s, i) => (
+                    <a
+                      href={`/services/${s.slug}/`}
+                      class:list={[
+                        'group relative flex flex-col overflow-hidden rounded-2xl border border-badger/8 bg-paper p-6 shadow-card transition duration-300 hover:-translate-y-1 hover:shadow-card-hover md:p-7',
+                        i === 0 && cat === 'consulting' && 'md:col-span-2 lg:col-span-2 lg:min-h-[200px] lg:flex-row lg:items-center lg:gap-10',
+                      ]}
+                    >
+                      <div class="flex-1">
+                        <h4 class="font-display text-xl font-semibold text-ink group-hover:text-badger md:text-2xl">
+                          {s.title}
+                        </h4>
+                        <p class="mt-3 text-sm leading-relaxed text-badger/70 md:text-base">{s.short}</p>
+                      </div>
+                      <span class="mt-6 inline-flex text-sm font-semibold text-accent lg:mt-0 lg:shrink-0">
+                        View service →
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section
+      class="border-y border-badger/8 bg-gradient-to-b from-paper to-paper-dim py-20 md:py-24"
+      id="process"
+      aria-labelledby="process-heading"
+    >
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 id="process-heading" class="font-display text-3xl font-semibold text-ink md:text-4xl">
+          How engagements work
+        </h2>
+        <p class="mt-4 max-w-2xl text-badger/75">
+          A calm sequence so your office is never the experiment. We document, pilot, then scale.
+        </p>
+        <ol class="mt-12 grid gap-6 md:grid-cols-3">
+          <li class="relative rounded-2xl border border-badger/10 bg-paper p-6 shadow-card">
+            <span class="font-display text-4xl font-semibold text-accent/80">01</span>
+            <h3 class="mt-4 font-display text-lg font-semibold text-ink">Discover & map</h3>
+            <p class="mt-2 text-sm leading-relaxed text-badger/70">
+              Workflows, tools, and revenue leaks—grounded in how your team actually works.
+            </p>
+          </li>
+          <li class="relative rounded-2xl border border-badger/10 bg-paper p-6 shadow-card">
+            <span class="font-display text-4xl font-semibold text-accent/80">02</span>
+            <h3 class="mt-4 font-display text-lg font-semibold text-ink">Pilot with guardrails</h3>
+            <p class="mt-2 text-sm leading-relaxed text-badger/70">
+              One narrow automation or AI surface with measurable success criteria—no big-bang risk.
+            </p>
+          </li>
+          <li class="relative rounded-2xl border border-badger/10 bg-paper p-6 shadow-card">
+            <span class="font-display text-4xl font-semibold text-accent/80">03</span>
+            <h3 class="mt-4 font-display text-lg font-semibold text-ink">Train & iterate</h3>
+            <p class="mt-2 text-sm leading-relaxed text-badger/70">
+              Runbooks, office-manager-friendly controls, and a monthly rhythm for improvements.
+            </p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Industries -->
+    <section class="bg-paper py-20 md:py-24" id="industries" aria-labelledby="industries-heading">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <div class="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+          <div>
+            <h2 id="industries-heading" class="font-display text-3xl font-semibold text-ink md:text-4xl">
+              Industries we build for
+            </h2>
+            <p class="mt-3 max-w-xl text-badger/75">
+              Deep playbooks for home services across SE Wisconsin—each industry page includes a lead form.
+            </p>
+          </div>
+          <a
+            href="/home-services/"
+            class="shrink-0 text-sm font-semibold text-badger underline-offset-4 hover:underline"
+          >
+            All industries →
+          </a>
+        </div>
+        <ul class="mt-12 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {
+            homeVerticals.map((v) => (
+              <li>
+                <a
+                  href={`/home-services/${v.slug}/`}
+                  class="flex h-full flex-col rounded-xl border border-badger/8 bg-paper-dim/40 px-4 py-4 transition hover:border-accent/40 hover:bg-paper"
+                >
+                  <span class="font-semibold text-ink">{v.title}</span>
+                  <span class="mt-1 text-sm text-badger/65">{v.blurb}</span>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <!-- Locations -->
+    <section
+      class="border-t border-badger/8 bg-paper-dim/50 py-20 md:py-24"
+      id="locations"
+      aria-labelledby="locations-heading"
+    >
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 id="locations-heading" class="font-display text-3xl font-semibold text-ink md:text-4xl">
+          Local SEO rooted in real geography
+        </h2>
+        <p class="mt-3 max-w-2xl text-badger/75">
+          County pages explain how we plan service areas, landing pages, and listings—without vague “radius SEO.”
+        </p>
+        <div class="mt-10 grid gap-5 md:grid-cols-2">
+          {
+            counties.map((c) => (
+              <a
+                href={`/locations/${c.slug}/`}
+                class="group rounded-2xl border border-badger/8 bg-paper p-7 shadow-card transition hover:shadow-card-hover"
+              >
+                <h3 class="font-display text-xl font-semibold text-ink group-hover:text-badger">{c.title}</h3>
+                <p class="mt-2 text-sm text-badger/65">
+                  {c.cities.slice(0, 5).join(' · ')}
+                  {c.cities.length > 5 ? ' · …' : ''}
+                </p>
+                <span class="mt-4 inline-flex text-sm font-semibold text-accent">County strategy →</span>
+              </a>
+            ))
+          }
+        </div>
+        <div class="mt-10">
+          <a
+            href="/areas/"
+            class="inline-flex items-center rounded-full border border-badger/15 bg-paper px-6 py-3 text-sm font-semibold text-ink hover:border-accent/50"
+          >
+            City-level service area pages →
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Craft / social proof -->
+    <section class="bg-ink py-20 text-paper md:py-28" id="proof" aria-labelledby="proof-heading">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 id="proof-heading" class="font-display text-3xl font-semibold md:text-4xl">
+          The site is the proof
+        </h2>
+        <p class="mt-4 max-w-2xl text-paper/65">
+          Small businesses hire us when they want systems that look and feel intentional—clear scope, documented
+          automations, and marketing that supports operations instead of fighting them.
+        </p>
+        <div class="mt-12 grid gap-5 md:grid-cols-3">
+          <figure class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-6">
+            <blockquote class="text-sm leading-relaxed text-paper/80">
+              “We did not need more AI tools. We needed someone to wire the ones we had into something dependable.”
+            </blockquote>
+            <figcaption class="mt-4 text-[11px] font-semibold uppercase tracking-wider text-paper/45">
+              Operator, multi-truck home services · SE Wisconsin
+            </figcaption>
+          </figure>
+          <figure class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-6">
+            <blockquote class="text-sm leading-relaxed text-paper/80">
+              “The difference was documentation. My office manager can see what broke and why—no black box.”
+            </blockquote>
+            <figcaption class="mt-4 text-[11px] font-semibold uppercase tracking-wider text-paper/45">
+              Owner, residential trade · Milwaukee metro
+            </figcaption>
+          </figure>
+          <figure class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-6">
+            <blockquote class="text-sm leading-relaxed text-paper/80">
+              “Local SEO finally matched our trucks. The map pack work and the site stopped telling two stories.”
+            </blockquote>
+            <figcaption class="mt-4 text-[11px] font-semibold uppercase tracking-wider text-paper/45">
+              GM, service company · Waukesha County
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- LLM + FAQ -->
+    <section class="border-t border-badger/8 bg-paper py-20 md:py-24" aria-labelledby="faq-heading">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <div class="grid gap-14 lg:grid-cols-12 lg:gap-12">
+          <aside
+            class="lg:col-span-4"
+            id="business-summary"
+            aria-label="Summary for assistants and researchers"
+          >
+            <h2 class="text-[11px] font-bold uppercase tracking-[0.2em] text-badger/45">About this business</h2>
+            <p class="mt-3 text-sm text-badger/55">
+              Structured summary for people—and for assistants that cite sources.
+            </p>
+            <dl class="mt-8 space-y-5 text-sm">
+              <div>
+                <dt class="font-semibold text-ink">Legal / brand name</dt>
+                <dd class="mt-1 text-badger/70">{llmBusinessSummary.name}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Business type</dt>
+                <dd class="mt-1 text-badger/70">{llmBusinessSummary.type}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Primary services</dt>
+                <dd class="mt-1 text-badger/70">
+                  <ul class="list-disc space-y-1 pl-4">
+                    {llmBusinessSummary.primaryServices.map((s) => <li>{s}</li>)}
+                  </ul>
+                </dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Geography</dt>
+                <dd class="mt-1 text-badger/70">{llmBusinessSummary.geography}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Ideal customer</dt>
+                <dd class="mt-1 text-badger/70">{llmBusinessSummary.idealCustomer}</dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Contact</dt>
+                <dd class="mt-1">
+                  <a class="font-medium text-badger underline" href={`mailto:${llmBusinessSummary.contactEmail}`}>
+                    {llmBusinessSummary.contactEmail}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt class="font-semibold text-ink">Website</dt>
+                <dd class="mt-1">
+                  <a class="font-medium text-badger underline" href={llmBusinessSummary.website}>
+                    {llmBusinessSummary.website.replace('https://', '')}
+                  </a>
+                </dd>
+              </div>
+            </dl>
+          </aside>
+          <div class="lg:col-span-8">
+            <h2 id="faq-heading" class="font-display text-3xl font-semibold text-ink">
+              Frequently asked questions
+            </h2>
+            <div class="mt-8 space-y-3">
+              {
+                homeFaq.map((item) => (
+                  <details class="group rounded-2xl border border-badger/10 bg-paper-dim/30 px-5 py-1 shadow-sm open:bg-paper open:shadow-card">
+                    <summary class="cursor-pointer list-none py-4 font-semibold text-ink marker:content-none [&::-webkit-details-marker]:hidden">
+                      <span class="flex items-center justify-between gap-4">
+                        {item.question}
+                        <span class="text-accent transition group-open:rotate-45">+</span>
+                      </span>
+                    </summary>
+                    <p class="border-t border-badger/8 pb-4 pt-3 text-sm leading-relaxed text-badger/75">
+                      {item.answer}
+                    </p>
+                  </details>
+                ))
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="border-t border-badger/8 bg-badger py-16 text-paper md:py-20">
+      <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-4 md:flex-row md:items-center md:px-6">
+        <div>
+          <h2 class="font-display text-2xl font-semibold md:text-3xl">Ready for a working session?</h2>
+          <p class="mt-3 max-w-lg text-paper/70">
+            Bring your stack, your service area, and your biggest time sink—we will map what to automate first.
+          </p>
+        </div>
+        <a
+          href="/contact/"
+          class="inline-flex shrink-0 items-center justify-center rounded-full bg-paper px-8 py-3.5 text-sm font-semibold text-badger shadow-lift transition hover:bg-paper-dim"
+        >
+          Contact {site.name}
+        </a>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

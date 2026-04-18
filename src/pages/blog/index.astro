@@ -1,0 +1,44 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Insights | AI Automation & Local SEO | MKE Rank"
+  description="Practical articles on AI automation, workflows, Google Business Profile, reviews, and local SEO for small businesses—especially in Wisconsin."
+  keywords="AI automation blog, local SEO tips, small business workflows"
+>
+  <div class="mx-auto max-w-4xl px-4 py-14 md:px-6 md:py-20">
+    <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-badger/45">Insights</p>
+    <h1 class="mt-4 font-display text-4xl font-semibold text-ink md:text-5xl">Notes for operators</h1>
+    <p class="mt-4 text-lg text-badger/80">
+      Short reads from {site.name}—systems, local growth, and responsible AI.
+    </p>
+
+    <ul class="mt-12 space-y-6">
+      {
+        posts.map((post) => (
+          <li class="rounded-2xl border border-badger/10 bg-paper p-6 shadow-card transition hover:shadow-card-hover">
+            <a href={`/blog/${post.slug}/`} class="block">
+              <p class="text-xs text-badger/55">
+                {post.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric',
+                })}
+              </p>
+              <h2 class="mt-2 font-display text-2xl font-semibold text-badger">{post.data.title}</h2>
+              <p class="mt-2 text-badger/80">{post.data.description}</p>
+              <span class="mt-4 inline-block text-sm font-semibold text-accent">Read article →</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</BaseLayout>

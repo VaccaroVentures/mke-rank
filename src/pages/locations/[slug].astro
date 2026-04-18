@@ -1,0 +1,99 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LeadForm from '../../components/LeadForm.astro';
+import { counties, site } from '../../data/site';
+import { getCountyDetail } from '../../data/counties-detail';
+import { localBusinessSchema, breadcrumbSchema } from '../../data/seo';
+
+export function getStaticPaths() {
+  return counties.map((c) => ({ params: { slug: c.slug } }));
+}
+
+const { slug } = Astro.params;
+const detail = slug ? getCountyDetail(slug) : undefined;
+
+if (!detail) {
+  return Astro.redirect('/locations/');
+}
+
+const formName = `lead-location-${detail.slug}`;
+const pageUrl = new URL(`/locations/${detail.slug}/`, site.url).toString();
+const seoTitle = `Local SEO & AI Automation in ${detail.title}, WI | MKE Rank`;
+const keywords = [
+  `local SEO ${detail.title}`,
+  'Wisconsin small business SEO',
+  'Google Business Profile',
+  'AI automation consulting',
+  'MKE Rank',
+].join(', ');
+
+const jsonLd = [
+  localBusinessSchema(),
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Locations', path: '/locations/' },
+    { name: detail.title, path: `/locations/${detail.slug}/` },
+  ]),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebPage',
+    '@id': `${pageUrl}#webpage`,
+    name: seoTitle,
+    description: detail.summary,
+    url: pageUrl,
+    inLanguage: 'en-US',
+    isPartOf: { '@id': `${site.url}#website` },
+    about: { '@type': 'AdministrativeArea', name: `${detail.title}, Wisconsin` },
+  },
+];
+---
+
+<BaseLayout title={seoTitle} description={detail.summary} keywords={keywords} jsonLd={jsonLd}
+>
+  <article class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
+    <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-badger/45">{site.name} · Locations</p>
+    <h1 class="mt-4 font-display text-4xl font-semibold text-ink md:text-5xl">{detail.title}</h1>
+    <p class="mt-6 max-w-3xl text-lg text-badger/85 leading-relaxed">{detail.summary}</p>
+
+    <div class="mt-12 grid gap-10 lg:grid-cols-3">
+      <div class="lg:col-span-2 space-y-10">
+        <section>
+          <h2 class="font-display text-2xl font-semibold text-ink">Market realities</h2>
+          <ul class="mt-4 list-disc space-y-2 pl-5 marker:text-accent">
+            {detail.marketNotes.map((m) => <li>{m}</li>)}
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl font-semibold text-ink">Opportunities we prioritize</h2>
+          <ul class="mt-4 list-disc space-y-2 pl-5 marker:text-accent">
+            {detail.opportunities.map((o) => <li>{o}</li>)}
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="font-display text-2xl font-semibold text-ink">Cities & communities</h2>
+          <p class="mt-2 text-sm text-badger/70">
+            Representative list—your exact routing may include additional townships and villages.
+          </p>
+          <ul class="mt-4 flex flex-wrap gap-2">
+            {
+              detail.cities.map((city) => (
+                <li class="rounded-full bg-paper-dim/80 px-3 py-1 text-sm text-badger">{city}</li>
+              ))
+            }
+          </ul>
+        </section>
+      </div>
+
+      <div class="lg:col-span-1">
+        <LeadForm
+          formName={formName}
+          contextLabel={`Local SEO in ${detail.title}`}
+          heading="Plan coverage for this county"
+          subheading="Tell us your trucks, dispatch rules, and where you want more booked jobs."
+        />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

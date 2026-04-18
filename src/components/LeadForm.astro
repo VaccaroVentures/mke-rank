@@ -1,0 +1,105 @@
+---
+interface Props {
+  /** Unique Netlify form name (letters, numbers, hyphens) */
+  formName: string;
+  heading?: string;
+  subheading?: string;
+  contextLabel: string;
+}
+
+const { formName, heading = 'Request a strategy call', subheading, contextLabel } = Astro.props;
+---
+
+<section
+  class="rounded-2xl border border-badger/10 bg-paper p-6 shadow-card md:p-8"
+  id="lead"
+>
+  <h2 class="font-display text-2xl font-semibold text-ink">{heading}</h2>
+  {subheading && <p class="mt-2 text-badger/75">{subheading}</p>}
+  <form
+    class="mt-6 space-y-4"
+    name={formName}
+    method="POST"
+    action="/thank-you/"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+  >
+    <input type="hidden" name="form-name" value={formName} />
+    <p class="hidden">
+      <label>
+        Do not fill this out: <input name="bot-field" />
+      </label>
+    </p>
+    <input type="hidden" name="context" value={contextLabel} />
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for={`${formName}-name`} class="block text-sm font-medium text-ink">Name</label>
+        <input
+          id={`${formName}-name`}
+          name="name"
+          type="text"
+          required
+          autocomplete="name"
+          class="mt-1.5 w-full rounded-xl border border-badger/12 bg-paper-dim/30 px-3 py-2.5 text-ink shadow-inner focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25"
+        />
+      </div>
+      <div>
+        <label for={`${formName}-company`} class="block text-sm font-medium text-ink">Company</label>
+        <input
+          id={`${formName}-company`}
+          name="company"
+          type="text"
+          autocomplete="organization"
+          class="mt-1.5 w-full rounded-xl border border-badger/12 bg-paper-dim/30 px-3 py-2.5 text-ink shadow-inner focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25"
+        />
+      </div>
+    </div>
+
+    <div class="grid gap-4 sm:grid-cols-2">
+      <div>
+        <label for={`${formName}-email`} class="block text-sm font-medium text-ink">Email</label>
+        <input
+          id={`${formName}-email`}
+          name="email"
+          type="email"
+          required
+          autocomplete="email"
+          class="mt-1.5 w-full rounded-xl border border-badger/12 bg-paper-dim/30 px-3 py-2.5 text-ink shadow-inner focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25"
+        />
+      </div>
+      <div>
+        <label for={`${formName}-phone`} class="block text-sm font-medium text-ink">Phone</label>
+        <input
+          id={`${formName}-phone`}
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          class="mt-1.5 w-full rounded-xl border border-badger/12 bg-paper-dim/30 px-3 py-2.5 text-ink shadow-inner focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25"
+        />
+      </div>
+    </div>
+
+    <div>
+      <label for={`${formName}-message`} class="block text-sm font-medium text-ink">What should we know?</label>
+      <textarea
+        id={`${formName}-message`}
+        name="message"
+        rows={4}
+        class="mt-1.5 w-full rounded-xl border border-badger/12 bg-paper-dim/30 px-3 py-2.5 text-ink shadow-inner focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/25"
+        placeholder="Current tools, biggest time sink, service area, what a great lead looks like…"
+      ></textarea>
+    </div>
+
+    <p class="text-xs text-badger/55">
+      By submitting, you agree to be contacted about {contextLabel}. No spam—unsubscribe any time.
+    </p>
+
+    <button
+      type="submit"
+      class="w-full rounded-full bg-ink px-4 py-3 text-center text-sm font-semibold text-paper shadow-card transition hover:bg-ink-soft sm:w-auto"
+    >
+      Send message
+    </button>
+  </form>
+</section>

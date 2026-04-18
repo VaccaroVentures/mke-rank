@@ -1,0 +1,86 @@
+---
+import { mainNav, site } from '../data/site';
+import { telHref } from '../data/nap';
+
+const phoneLink = telHref();
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-badger/8 bg-paper/90 shadow-[0_1px_0_rgba(7,10,8,0.04)] backdrop-blur-md"
+>
+  <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3.5 md:px-6">
+    <a href="/" class="group flex flex-col gap-0.5 sm:flex-row sm:items-baseline sm:gap-3">
+      <span class="font-display text-xl font-semibold tracking-tight text-ink md:text-2xl">
+        {site.name}
+      </span>
+      <span class="text-[10px] font-semibold uppercase tracking-[0.18em] text-badger/50 sm:text-xs">
+        AI automation consulting
+      </span>
+    </a>
+    <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Main">
+      {
+        mainNav.map((item) => (
+          <a
+            href={item.href}
+            class="rounded-lg px-2.5 py-2 text-sm font-medium text-badger/75 transition hover:bg-badger/5 hover:text-badger xl:px-3"
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      {
+        phoneLink && (
+          <a
+            href={phoneLink}
+            class="ml-1 rounded-lg px-2.5 py-2 text-sm font-semibold text-badger hover:bg-badger/5 xl:px-3"
+          >
+            Call
+          </a>
+        )
+      }
+      <a
+        href="/contact/"
+        class="ml-1 inline-flex items-center rounded-full bg-ink px-4 py-2.5 text-sm font-semibold text-paper shadow-card transition hover:bg-ink-soft xl:px-5"
+      >
+        Book a call
+      </a>
+    </nav>
+    <details class="relative lg:hidden">
+      <summary
+        class="cursor-pointer list-none rounded-full border border-badger/15 bg-paper px-4 py-2 text-sm font-semibold text-ink shadow-sm"
+      >
+        Menu
+      </summary>
+      <div
+        class="absolute right-0 z-50 mt-2 max-h-[min(70vh,520px)] w-64 overflow-y-auto rounded-2xl border border-badger/10 bg-paper p-2 shadow-lift"
+      >
+        {
+          mainNav.map((item) => (
+            <a
+              href={item.href}
+              class="block rounded-xl px-3 py-2.5 text-sm font-medium text-badger hover:bg-badger/5"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+        {
+          phoneLink && (
+            <a
+              href={phoneLink}
+              class="block rounded-xl px-3 py-2.5 text-sm font-semibold text-badger hover:bg-badger/5"
+            >
+              Call
+            </a>
+          )
+        }
+        <a
+          href="/contact/"
+          class="mt-1 block rounded-xl bg-ink px-3 py-2.5 text-center text-sm font-semibold text-paper"
+        >
+          Book a call
+        </a>
+      </div>
+    </details>
+  </div>
+</header>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, counties } from '../../data/site';
+---
+
+<BaseLayout
+  title="SE Wisconsin Counties"
+  description="Local SEO coverage for Milwaukee, Waukesha, Racine & Kenosha, and Ozaukee, Washington & Walworth counties—built for home services contractors."
+>
+  <div class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
+    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-badger/55">Locations</p>
+    <h1 class="mt-3 font-display text-4xl font-bold text-badger">County-level strategy for real drive times</h1>
+    <p class="mt-4 max-w-2xl text-lg text-badger/80">
+      {site.name} plans GBP, landing pages, and automation around the counties and cities you actually cover—not a
+      vague circle on a map.
+    </p>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {
+        counties.map((c) => (
+          <a
+            href={`/locations/${c.slug}/`}
+            class="rounded-2xl border border-cream-200 bg-cream-50 p-8 shadow-sm transition hover:border-gold/45"
+          >
+            <h2 class="font-display text-2xl font-semibold text-badger">{c.title}</h2>
+            <p class="mt-3 text-sm text-badger/70">
+              Includes: {c.cities.slice(0, 6).join(', ')}
+              {c.cities.length > 6 ? ', …' : ''}
+            </p>
+            <p class="mt-6 text-sm font-semibold text-gold">Read county notes →</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

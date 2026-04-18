@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { organizationSchema } from '../data/seo';
+---
+
+<BaseLayout
+  title="About MKE Rank | AI Automation Consulting"
+  description="MKE Rank helps small businesses adopt AI and automation with governance, documentation, and local growth systems—based in southeastern Wisconsin."
+  keywords="MKE Rank, AI automation consultant, Wisconsin small business, workflow automation"
+  jsonLd={[organizationSchema()]}
+>
+  <div class="mx-auto max-w-3xl px-4 py-14 md:px-6 md:py-20">
+    <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-badger/45">About</p>
+    <h1 class="mt-4 font-display text-4xl font-semibold text-ink md:text-5xl">
+      Automation consulting with Midwest practicality
+    </h1>
+    <div class="mt-10 space-y-5 text-badger/85 leading-relaxed">
+      <p>
+        {site.name} is a small-business AI automation consulting practice. We help owners implement{' '}
+        <strong class="font-semibold text-ink">workflows, customer-facing AI, and local SEO</strong> without turning
+        your office into a lab experiment.
+      </p>
+      <p>
+        Our roots are in southeastern Wisconsin—especially home services and other local operators where the phone,
+        the map pack, and the schedule matter more than vanity metrics.
+      </p>
+      <p>
+        Artificial intelligence is a multiplier when it is governed: clear approvals, documented automations, and
+        training so your team can maintain what we build.
+      </p>
+      <h2 class="font-display text-2xl font-semibold text-ink pt-4">Principles</h2>
+      <ul class="list-disc space-y-2 pl-5 marker:text-accent">
+        <li>Transparent scope—you know what ships and what it connects to.</li>
+        <li>Ethical growth—no fake reviews, no spammy doorway pages, no risky link schemes.</li>
+        <li>Operator-grade reporting tied to throughput, leads, and booked work.</li>
+      </ul>
+      <p>
+        Questions?{' '}
+        <a class="font-medium text-badger underline decoration-accent/80 underline-offset-2" href={`mailto:${site.email}`}>
+          {site.email}
+        </a>
+      </p>
+    </div>
+  </div>
+</BaseLayout>

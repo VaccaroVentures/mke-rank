@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { localCities } from '../../data/local-cities';
+import { localBusinessSchema, itemListSchema } from '../../data/seo';
+
+const byCounty = localCities.reduce<Record<string, typeof localCities>>((acc, c) => {
+  acc[c.countyName] = acc[c.countyName] ?? [];
+  acc[c.countyName].push(c);
+  return acc;
+}, {});
+
+const countyKeys = Object.keys(byCounty).sort((a, b) => a.localeCompare(b));
+
+const pageUrls = localCities.map((c) => new URL(`/areas/${c.slug}/`, site.url).toString());
+
+const jsonLd = [
+  localBusinessSchema(),
+  itemListSchema({
+    name: 'MKE Rank southeastern Wisconsin service areas',
+    description:
+      'City-level pages for AI automation consulting and local SEO across Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth counties.',
+    urls: pageUrls,
+  }),
+];
+---
+
+<BaseLayout
+  title="SE Wisconsin Service Areas | MKE Rank"
+  description="MKE Rank serves small businesses across southeastern Wisconsin. Explore city-level pages for Milwaukee, Waukesha, Racine, Kenosha, and more—AI automation, workflows, and local SEO."
+  keywords="Milwaukee AI consultant, Waukesha automation, Racine local SEO, Kenosha small business, Wisconsin service areas"
+  jsonLd={jsonLd}
+>
+  <div class="border-b border-badger/8 bg-gradient-to-b from-paper to-paper-dim">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+      <p class="text-[11px] font-bold uppercase tracking-[0.22em] text-badger/45">Service areas</p>
+      <h1 class="mt-4 max-w-3xl font-display text-4xl font-semibold text-ink md:text-5xl">
+        City pages built for real local intent
+      </h1>
+      <p class="mt-6 max-w-2xl text-lg text-badger/75">
+        Each page is written for how owners search in that market—not copy-pasted “city swap” spam. Use these as
+        entry points for automation consulting, customer-facing AI, and local SEO programs across {site.region}.
+      </p>
+    </div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-20">
+    {
+      countyKeys.map((county) => (
+        <section class="mb-14 last:mb-0" aria-labelledby={`county-${county.replace(/\s+/g, '-')}`}>
+          <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <h2 id={`county-${county.replace(/\s+/g, '-')}`} class="font-display text-2xl font-semibold text-ink">
+              {county}
+            </h2>
+            <a
+              class="text-sm font-semibold text-badger underline-offset-4 hover:underline"
+              href={`/locations/${byCounty[county][0].countySlug}/`}
+            >
+              County overview →
+            </a>
+          </div>
+          <ul class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {byCounty[county].map((c) => (
+              <li>
+                <a
+                  href={`/areas/${c.slug}/`}
+                  class="flex h-full flex-col rounded-2xl border border-badger/10 bg-paper p-6 shadow-card transition hover:shadow-card-hover"
+                >
+                  <span class="font-display text-lg font-semibold text-ink">
+                    {c.name}, WI
+                  </span>
+                  <span class="mt-2 flex-1 text-sm text-badger/70">{c.seoDescription.slice(0, 120)}…</span>
+                  <span class="mt-4 text-sm font-semibold text-accent">View page →</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ))
+    }
+  </div>
+</BaseLayout>

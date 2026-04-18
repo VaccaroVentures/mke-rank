@@ -1,0 +1,25 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Thank you"
+  description="Thanks for contacting MKE Rank—we will be in touch shortly."
+>
+  <div class="mx-auto max-w-xl px-4 py-24 text-center md:px-6">
+    <p class="text-5xl" aria-hidden="true">🦡</p>
+    <h1 class="mt-6 font-display text-3xl font-bold text-badger">Thanks—we got it</h1>
+    <p class="mt-4 text-badger/80">
+      Your message is on its way. If this was urgent, email{' '}
+      <a class="font-medium text-badger underline" href={`mailto:${site.email}`}>{site.email}</a>
+      and put <span class="whitespace-nowrap">“URGENT — Local SEO”</span> in the subject line.
+    </p>
+    <a
+      href="/"
+      class="mt-10 inline-flex rounded-lg bg-badger px-6 py-3 text-sm font-semibold text-cream-50 hover:bg-badger-600"
+    >
+      Back to home
+    </a>
+  </div>
+</BaseLayout>

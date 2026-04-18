@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site, homeVerticals } from '../../data/site';
+---
+
+<BaseLayout
+  title="Industries | Home Services Automation & Local SEO | MKE Rank"
+  description="Industry playbooks for HVAC, plumbing, electrical, roofing, landscaping, restoration, pest control, and remodeling—AI automation and local SEO for SE Wisconsin contractors."
+  keywords="home services automation, HVAC marketing Wisconsin, contractor local SEO"
+>
+  <div class="mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-20">
+    <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-badger/45">Industries</p>
+    <h1 class="mt-4 font-display text-4xl font-semibold text-ink md:text-5xl">
+      Built for operators who run trucks—not IT departments
+    </h1>
+    <p class="mt-5 max-w-2xl text-lg text-badger/80">
+      Each page connects local demand, proof, and automation opportunities. Every vertical includes a lead form so we
+      can route your project correctly.
+    </p>
+
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {
+        homeVerticals.map((v) => (
+          <a
+            href={`/home-services/${v.slug}/`}
+            class="rounded-2xl border border-badger/10 bg-paper p-8 shadow-card transition hover:shadow-card-hover"
+          >
+            <h2 class="font-display text-2xl font-semibold text-ink">{v.title}</h2>
+            <p class="mt-3 text-badger/75">{v.blurb}</p>
+            <p class="mt-6 text-sm font-semibold text-accent">Open playbook →</p>
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

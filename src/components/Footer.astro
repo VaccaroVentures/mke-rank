@@ -1,0 +1,104 @@
+---
+import { site, mainNav, counties, aiServices } from '../data/site';
+import { nap, formatNapAddressLines, telHref } from '../data/nap';
+
+const phoneLink = telHref();
+const addressLines = formatNapAddressLines();
+---
+
+<footer class="relative border-t border-badger/10 bg-ink text-paper">
+  <div
+    class="pointer-events-none absolute inset-0 bg-grid-fine bg-grid opacity-[0.35]"
+    aria-hidden="true"
+  ></div>
+  <div class="relative mx-auto max-w-6xl px-4 py-14 md:px-6 md:py-16">
+    <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-12 lg:gap-10">
+      <div class="lg:col-span-4">
+        <p class="font-display text-2xl font-semibold tracking-tight text-paper">{site.name}</p>
+        <p class="mt-3 max-w-sm text-sm leading-relaxed text-paper/65">{site.tagline}</p>
+
+        <div class="mt-6 rounded-2xl border border-paper/10 bg-paper/[0.04] p-5">
+          <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-paper/40">Visit &amp; contact</p>
+          <address class="mt-3 text-sm not-italic leading-relaxed text-paper/80">
+            {
+              addressLines.map((line) => (
+                <span class="block">{line}</span>
+              ))
+            }
+          </address>
+          {phoneLink && (
+            <a class="mt-3 block text-sm font-semibold text-gold-light hover:underline" href={phoneLink}>
+              {nap.telephone}
+            </a>
+          )}
+          <a
+            class="mt-2 block text-sm font-semibold text-gold-light hover:underline"
+            href={`mailto:${site.email}`}
+          >
+            {site.email}
+          </a>
+          {nap.googleMapsUrl && (
+            <a
+              class="mt-3 inline-flex text-xs font-semibold text-paper/55 underline-offset-4 hover:text-gold-light hover:underline"
+              href={nap.googleMapsUrl}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Google Maps →
+            </a>
+          )}
+        </div>
+      </div>
+      <div class="lg:col-span-2">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-paper/40">Explore</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {
+            mainNav.map((item) => (
+              <li>
+                <a class="text-paper/80 transition hover:text-gold-light" href={item.href}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-paper/40">Services</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {
+            aiServices.map((s) => (
+              <li>
+                <a class="text-paper/80 transition hover:text-gold-light" href={`/services/${s.slug}/`}>
+                  {s.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="lg:col-span-3">
+        <p class="text-[11px] font-bold uppercase tracking-[0.2em] text-paper/40">Counties</p>
+        <ul class="mt-4 space-y-2.5 text-sm">
+          {
+            counties.map((c) => (
+              <li>
+                <a class="text-paper/80 transition hover:text-gold-light" href={`/locations/${c.slug}/`}>
+                  {c.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+        <p class="mt-6 text-[11px] font-bold uppercase tracking-[0.2em] text-paper/40">City pages</p>
+        <a class="mt-2 inline-block text-sm text-paper/80 hover:text-gold-light" href="/areas/">
+          SE Wisconsin service areas →
+        </a>
+      </div>
+    </div>
+    <div class="mt-12 flex flex-col gap-3 border-t border-paper/10 pt-8 text-xs text-paper/45 md:flex-row md:items-center md:justify-between">
+      <p>© {new Date().getFullYear()} {site.name}. Serving {site.region}.</p>
+      <p>Independent · Not affiliated with Google LLC.</p>
+    </div>
+  </div>
+</footer>

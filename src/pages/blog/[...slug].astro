@@ -1,0 +1,51 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+interface Props {
+  post: CollectionEntry<'blog'>;
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="mx-auto max-w-3xl px-4 py-14 md:px-6 md:py-20">
+    <p class="text-xs text-badger/55">
+      {post.data.pubDate.toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+      })}
+    </p>
+    <h1 class="mt-3 font-display text-4xl font-bold text-badger">{post.data.title}</h1>
+    <p class="mt-4 text-lg text-badger/80">{post.data.description}</p>
+
+    <div class="article-markdown mt-10 max-w-none text-badger/90">
+      <Content />
+    </div>
+
+    <div class="mt-14 rounded-2xl border border-cream-200 bg-cream-100/70 p-6">
+      <h2 class="font-display text-xl font-bold text-badger">Want this applied to your shop?</h2>
+      <p class="mt-2 text-sm text-badger/80">
+        Book a free audit—we will connect strategy to your counties, trucks, and how you want the phone to ring.
+      </p>
+      <a
+        href="/contact/"
+        class="mt-4 inline-flex rounded-lg bg-badger px-5 py-2.5 text-sm font-semibold text-cream-50 hover:bg-badger-600"
+      >
+        Contact MKE Rank
+      </a>
+    </div>
+  </article>
+</BaseLayout>
