@@ -6,6 +6,9 @@
   html {
     @apply scroll-smooth antialiased text-badger-700 bg-paper;
   }
+  body {
+    font-feature-settings: 'ss01', 'cv11';
+  }
 }
 
 @layer components {

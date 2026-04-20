@@ -40,64 +40,106 @@ const pageKeywords = [
   <article>
     <!-- Hero -->
     <section
-      class="relative overflow-hidden bg-ink text-paper"
+      class="relative min-h-screen overflow-hidden bg-[#21346e] text-white"
       aria-labelledby="hero-heading"
     >
-      <div class="pointer-events-none absolute inset-0 bg-hero-glow" aria-hidden="true"></div>
+      <video
+        class="absolute inset-0 h-full w-full object-cover"
+        autoplay
+        loop
+        muted
+        playsinline
+        preload="auto"
+        poster=""
+        aria-hidden="true"
+      >
+        <source
+          src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260206_044704_dd33cb15-c23f-4cfc-aa09-a0465d4dcb54.mp4"
+          type="video/mp4"
+        />
+      </video>
+
+      <!-- Legibility overlay: subtle navy vignette so white headline stays readable -->
       <div
-        class="pointer-events-none absolute inset-0 bg-grid-fine bg-grid opacity-[0.2]"
+        class="pointer-events-none absolute inset-0 bg-gradient-to-b from-[#21346e]/60 via-[#21346e]/25 to-[#161e44]/70"
         aria-hidden="true"
       ></div>
-      <div class="relative mx-auto max-w-6xl px-4 pb-20 pt-16 md:px-6 md:pb-28 md:pt-20">
+
+      <div class="container relative mx-auto max-w-6xl px-4 pt-32 md:px-6 md:pt-48">
         <div class="flex flex-wrap items-center gap-3">
           <span
-            class="inline-flex items-center rounded-full border border-paper/15 bg-paper/5 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-paper/55"
+            class="inline-flex items-center rounded-full border border-white/25 bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/80 backdrop-blur"
           >
             Brew City · 7 counties
           </span>
-          <span class="text-[11px] font-medium text-mint/90">Human-in-the-loop by default</span>
+          <span class="text-[11px] font-medium uppercase tracking-[0.18em] text-white/70">
+            Human-in-the-loop by default
+          </span>
         </div>
+
         <h1
           id="hero-heading"
-          class="mt-8 max-w-4xl font-display text-4xl font-semibold leading-[1.08] tracking-tight text-balance md:text-6xl md:leading-[1.05]"
+          class="mt-10 font-display font-bold uppercase text-white text-6xl md:text-8xl lg:text-[100px]"
+          style="line-height: 0.98; letter-spacing: -2px;"
         >
-          AI automation consulting that makes your business look as sharp as it runs
+          <span class="block" style="letter-spacing: -2px;">New Era</span>
+          <span class="block" style="letter-spacing: -3px;">of Design</span>
+          <span class="block" style="letter-spacing: -4px;">Starts Now</span>
         </h1>
-        <p class="mt-8 max-w-2xl text-lg leading-relaxed text-paper/72 md:text-xl">
-          Your website should be proof you understand modern operations. We design{' '}
-          <strong class="font-semibold text-paper">workflows, customer AI, and local growth systems</strong> for teams
-          without an enterprise budget—so you save hours, respond faster, and win nearby demand.
+
+        <p class="mt-8 max-w-2xl text-base leading-relaxed text-white/80 md:text-lg">
+          AI automation, workflow systems, and local SEO—designed for Milwaukee-area teams who
+          want their site to look as sharp as it runs.
         </p>
-        <div class="mt-10 flex flex-wrap gap-4">
+
+        <div class="mt-10 flex flex-wrap items-center gap-5">
           <a
             href="/contact/"
-            class="inline-flex items-center justify-center rounded-full bg-paper px-8 py-3.5 text-sm font-semibold text-ink shadow-lift transition hover:bg-paper-dim"
+            aria-label="Get Started"
+            class="group relative inline-flex h-[65px] w-[184px] items-center justify-center transition-transform duration-200 ease-out hover:scale-105 active:scale-95"
           >
-            Book a working session
+            <svg
+              viewBox="0 0 184 65"
+              preserveAspectRatio="none"
+              class="absolute inset-0 h-full w-full drop-shadow-[0_10px_30px_rgba(255,255,255,0.25)]"
+              aria-hidden="true"
+            >
+              <path
+                d="M14 2 Q0 4 0 20 L1 46 Q-1 63 16 63 L168 64 Q184 65 184 48 L183 16 Q185 0 168 2 Z"
+                fill="#ffffff"
+              />
+            </svg>
+            <span
+              class="relative z-10 font-display font-bold uppercase"
+              style="font-size: 20px; color: #161a20; letter-spacing: 0.5px;"
+            >
+              Get Started
+            </span>
           </a>
+
           <a
             href="/services/"
-            class="inline-flex items-center justify-center rounded-full border border-paper/25 bg-transparent px-8 py-3.5 text-sm font-semibold text-paper transition hover:border-paper/50 hover:bg-paper/5"
+            class="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/5 px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/80 hover:bg-white/10"
           >
             Explore services
           </a>
         </div>
 
-        <dl class="mt-16 grid gap-4 sm:grid-cols-3">
-          <div class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-5 backdrop-blur-sm">
-            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-paper/45">Throughput</dt>
-            <dd class="mt-2 font-display text-2xl font-semibold text-paper">Fewer handoffs</dd>
-            <p class="mt-1 text-sm text-paper/55">Automations with logging—not mystery Zaps.</p>
+        <dl class="mt-20 grid gap-4 pb-20 sm:grid-cols-3">
+          <div class="rounded-2xl border border-white/15 bg-white/[0.06] p-5 backdrop-blur-md">
+            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Throughput</dt>
+            <dd class="mt-2 font-display text-2xl font-bold text-white">Fewer handoffs</dd>
+            <p class="mt-1 text-sm text-white/70">Automations with logging—not mystery Zaps.</p>
           </div>
-          <div class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-5 backdrop-blur-sm">
-            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-paper/45">Trust</dt>
-            <dd class="mt-2 font-display text-2xl font-semibold text-paper">Approvals built in</dd>
-            <p class="mt-1 text-sm text-paper/55">AI drafts; humans publish what matters.</p>
+          <div class="rounded-2xl border border-white/15 bg-white/[0.06] p-5 backdrop-blur-md">
+            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Trust</dt>
+            <dd class="mt-2 font-display text-2xl font-bold text-white">Approvals built in</dd>
+            <p class="mt-1 text-sm text-white/70">AI drafts; humans publish what matters.</p>
           </div>
-          <div class="rounded-2xl border border-paper/10 bg-paper/[0.04] p-5 backdrop-blur-sm">
-            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-paper/45">Nearby growth</dt>
-            <dd class="mt-2 font-display text-2xl font-semibold text-paper">Local SEO depth</dd>
-            <p class="mt-1 text-sm text-paper/55">Map pack + site + reputation—connected.</p>
+          <div class="rounded-2xl border border-white/15 bg-white/[0.06] p-5 backdrop-blur-md">
+            <dt class="text-[11px] font-bold uppercase tracking-[0.18em] text-white/60">Nearby growth</dt>
+            <dd class="mt-2 font-display text-2xl font-bold text-white">Local SEO depth</dd>
+            <p class="mt-1 text-sm text-white/70">Map pack + site + reputation—connected.</p>
           </div>
         </dl>
       </div>
