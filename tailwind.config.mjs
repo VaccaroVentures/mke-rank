@@ -4,45 +4,48 @@ export default {
   theme: {
     extend: {
       colors: {
+        // Soft blush tones lifted from the badger's face highlights.
         cream: {
-          50: '#fbfcff',
-          100: '#eef1fa',
-          200: '#dde3f2',
+          50: '#fffafb',
+          100: '#fde8ec',
+          200: '#fadadd',
         },
-        // Brand dark blue (was dark green). Primary surface/text color.
+        // Brand red family (name retained as `badger` for minimal churn).
+        // Primary = #A60000, deeper shades from the logo's shadow work.
         badger: {
-          DEFAULT: '#21346e',
-          600: '#1a2a5c',
-          700: '#131e42',
+          DEFAULT: '#a60000',
+          600: '#850000',
+          700: '#660000',
         },
-        // Warm accent kept for highlights/hovers, retuned to sit well on blue.
+        // Vibrant glow red used for accents / hover pops.
         gold: {
-          DEFAULT: '#f0b744',
-          light: '#ffd581',
+          DEFAULT: '#ff3333',
+          light: '#ff6b6b',
         },
-        // Near-black surface used in hero/footer.
+        // Near-black surfaces — warmed toward maroon so blacks read as "brand."
         ink: {
-          DEFAULT: '#0c1024',
-          soft: '#161a20',
-          muted: '#242937',
+          DEFAULT: '#1a0000',
+          soft: '#2b0a0a',
+          muted: '#3d1616',
         },
-        // Light surface.
+        // Light surface — barely-there blush.
         paper: {
-          DEFAULT: '#f6f8fd',
-          dim: '#e8ecf5',
+          DEFAULT: '#fff5f6',
+          dim: '#ffe6ea',
         },
-        mist: '#c4cce0',
+        mist: '#d8b8bc',
         accent: {
-          DEFAULT: '#f0b744',
-          glow: 'rgba(240, 183, 68, 0.35)',
+          DEFAULT: '#ff3333',
+          glow: 'rgba(255, 51, 51, 0.4)',
         },
-        // Used for subtle brand hint, now a cool periwinkle.
-        mint: '#8aa4ff',
-        // Explicit brand shade for hero fallback & accents.
-        royal: {
-          DEFAULT: '#21346e',
-          deep: '#161e44',
-          soft: '#3a4f9e',
+        // Shifted from cool mint to warm coral so all secondary pops stay on-brand.
+        mint: '#ff8080',
+        // Explicit tokens matching the logo palette exactly.
+        brand: {
+          red: '#a60000',
+          maroon: '#660000',
+          glow: '#ff3333',
+          blush: '#fadadd',
         },
       },
       fontFamily: {
@@ -53,15 +56,15 @@ export default {
         'grid-fine':
           'linear-gradient(to right, rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.05) 1px, transparent 1px)',
         'hero-glow':
-          'radial-gradient(ellipse 80% 60% at 50% -20%, rgba(138, 164, 255, 0.25), transparent 55%), radial-gradient(ellipse 50% 40% at 100% 50%, rgba(240, 183, 68, 0.14), transparent 50%)',
+          'radial-gradient(ellipse 80% 60% at 50% -20%, rgba(255, 51, 51, 0.28), transparent 55%), radial-gradient(ellipse 50% 40% at 100% 50%, rgba(250, 218, 221, 0.16), transparent 50%)',
       },
       backgroundSize: {
         grid: '48px 48px',
       },
       boxShadow: {
-        lift: '0 24px 80px -20px rgba(12, 16, 36, 0.55), 0 0 0 1px rgba(255,255,255,0.06)',
-        card: '0 4px 24px -4px rgba(12, 16, 36, 0.14), 0 0 0 1px rgba(33, 52, 110, 0.08)',
-        'card-hover': '0 12px 40px -8px rgba(12, 16, 36, 0.22), 0 0 0 1px rgba(240, 183, 68, 0.28)',
+        lift: '0 24px 80px -20px rgba(26, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.06)',
+        card: '0 4px 24px -4px rgba(26, 0, 0, 0.14), 0 0 0 1px rgba(166, 0, 0, 0.08)',
+        'card-hover': '0 12px 40px -8px rgba(26, 0, 0, 0.22), 0 0 0 1px rgba(255, 51, 51, 0.35)',
       },
       animation: {
         'fade-up': 'fadeUp 0.7s ease-out both',

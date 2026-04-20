@@ -18,7 +18,7 @@ interface Props {
 const { title, description, canonicalPath = Astro.url.pathname, keywords, jsonLd = [] } = Astro.props;
 const canonical = new URL(canonicalPath, site.url).toString();
 const fullTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
-const ogImage = `${site.url}/favicon.svg`;
+const ogImage = `${site.url}${site.logo}`;
 ---
 
 <!doctype html>
@@ -28,7 +28,7 @@ const ogImage = `${site.url}/favicon.svg`;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#21346e" />
+    <meta name="theme-color" content="#a60000" />
     <title>{fullTitle}</title>
     <meta name="description" content={description} />
     {keywords && <meta name="keywords" content={keywords} />}

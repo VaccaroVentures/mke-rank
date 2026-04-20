@@ -1,13 +1,19 @@
 export const site = {
-  name: 'Brew City Automation',
+  name: 'Badger Automation Group',
   /** Stacked header lockup (equals full brand) */
-  nameLine1: 'Brew City',
-  nameLine2: 'Automation',
+  nameLine1: 'Badger',
+  nameLine2: 'Automation Group',
+  /** Parent entity / legal umbrella */
+  parentCompany: 'Vaccaro Ventures LLC',
+  /** Full lockup: icon + "BADGER AUTOMATION GROUP" wordmark (1024x558). */
+  logo: '/brand/badger-automation-group-logo.png',
+  /** Icon-only mark: shield/badger/gear, roughly square (302x285). */
+  logoMark: '/brand/badger-automation-group-mark.png',
   tagline:
     'AI automation & local SEO for businesses in Milwaukee and seven southeastern Wisconsin counties',
   longDescription:
-    'Brew City Automation helps small businesses across Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth Counties adopt practical AI: human-in-the-loop workflows, customer-facing AI, and local SEO that saves time and wins nearby customers.',
-  url: 'https://brewcityautomation.com',
+    'Badger Automation Group — a Vaccaro Ventures LLC company — helps small businesses across Milwaukee, Waukesha, Racine, Kenosha, Ozaukee, Washington, and Walworth Counties adopt practical AI: human-in-the-loop workflows, customer-facing AI, and local SEO that saves time and wins nearby customers.',
+  url: 'https://badgerautomationgroup.com',
   email: 'thomas@vaccaromarketing.digital',
   region: 'Southeastern Wisconsin',
 } as const;

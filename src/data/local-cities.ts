@@ -18,9 +18,9 @@ export const localCities: LocalCity[] = [
     name: 'Milwaukee',
     countySlug: 'milwaukee-county',
     countyName: 'Milwaukee County',
-    seoTitle: 'AI Automation & Local SEO Consultant in Milwaukee, WI | Brew City Automation',
+    seoTitle: 'AI Automation & Local SEO Consultant in Milwaukee, WI | Badger Automation Group',
     seoDescription:
-      'Brew City Automation helps Milwaukee small businesses with AI automation consulting, workflow integrations, chat/voice AI, and local SEO for the map pack and organic search.',
+      'Badger Automation Group helps Milwaukee small businesses with AI automation consulting, workflow integrations, chat/voice AI, and local SEO for the map pack and organic search.',
     keywords: [
       'Milwaukee AI consultant',
       'business automation Milwaukee',
@@ -47,7 +47,7 @@ export const localCities: LocalCity[] = [
     name: 'Waukesha',
     countySlug: 'waukesha-county',
     countyName: 'Waukesha County',
-    seoTitle: 'AI Automation Consulting in Waukesha, WI | Brew City Automation',
+    seoTitle: 'AI Automation Consulting in Waukesha, WI | Badger Automation Group',
     seoDescription:
       'AI automation and local SEO for Waukesha businesses: CRM and workflow integrations, customer-facing AI, and map-pack strategy for Waukesha County.',
     keywords: ['Waukesha AI consultant', 'business automation Waukesha', 'local SEO Waukesha County'],
@@ -71,7 +71,7 @@ export const localCities: LocalCity[] = [
     name: 'Brookfield',
     countySlug: 'waukesha-county',
     countyName: 'Waukesha County',
-    seoTitle: 'Small Business AI Automation in Brookfield, WI | Brew City Automation',
+    seoTitle: 'Small Business AI Automation in Brookfield, WI | Badger Automation Group',
     seoDescription:
       'Brookfield-area AI automation consulting and local SEO for growing small businesses—workflows, CRM, chat/voice AI, and Google Business Profile optimization.',
     keywords: ['Brookfield WI automation', 'Brookfield local SEO', 'AI consultant Brookfield'],
@@ -95,7 +95,7 @@ export const localCities: LocalCity[] = [
     name: 'Racine',
     countySlug: 'racine-kenosha',
     countyName: 'Racine County',
-    seoTitle: 'AI & Local SEO Services in Racine, WI | Brew City Automation',
+    seoTitle: 'AI & Local SEO Services in Racine, WI | Badger Automation Group',
     seoDescription:
       'Racine small businesses: AI automation consulting, workflow automation, and local SEO—including Google Business Profile, reviews, and localized content.',
     keywords: ['Racine WI AI consultant', 'local SEO Racine', 'business automation Racine'],
@@ -119,7 +119,7 @@ export const localCities: LocalCity[] = [
     name: 'Kenosha',
     countySlug: 'racine-kenosha',
     countyName: 'Kenosha County',
-    seoTitle: 'Kenosha WI AI Automation & Local SEO | Brew City Automation',
+    seoTitle: 'Kenosha WI AI Automation & Local SEO | Badger Automation Group',
     seoDescription:
       'Kenosha-area consulting for AI automation, customer-facing AI, and local SEO—built for small businesses competing near the IL border and across Kenosha County.',
     keywords: ['Kenosha AI automation', 'local SEO Kenosha', 'Kenosha small business consultant'],
@@ -143,7 +143,7 @@ export const localCities: LocalCity[] = [
     name: 'Wauwatosa',
     countySlug: 'milwaukee-county',
     countyName: 'Milwaukee County',
-    seoTitle: 'Wauwatosa Business Automation & Local SEO | Brew City Automation',
+    seoTitle: 'Wauwatosa Business Automation & Local SEO | Badger Automation Group',
     seoDescription:
       'Wauwatosa small businesses: AI workflow automation, integrations, and local SEO services aligned to Milwaukee County search behavior.',
     keywords: ['Wauwatosa automation consultant', 'local SEO Wauwatosa', 'AI small business Wauwatosa'],
@@ -167,7 +167,7 @@ export const localCities: LocalCity[] = [
     name: 'Oak Creek',
     countySlug: 'milwaukee-county',
     countyName: 'Milwaukee County',
-    seoTitle: 'Oak Creek WI AI Consulting & Local SEO | Brew City Automation',
+    seoTitle: 'Oak Creek WI AI Consulting & Local SEO | Badger Automation Group',
     seoDescription:
       'Oak Creek-area AI automation consulting for small businesses: workflows, CRM connections, customer AI, and local SEO for Milwaukee County.',
     keywords: ['Oak Creek business automation', 'local SEO Oak Creek', 'AI consultant Oak Creek WI'],
@@ -191,7 +191,7 @@ export const localCities: LocalCity[] = [
     name: 'West Allis',
     countySlug: 'milwaukee-county',
     countyName: 'Milwaukee County',
-    seoTitle: 'West Allis Small Business AI & SEO | Brew City Automation',
+    seoTitle: 'West Allis Small Business AI & SEO | Badger Automation Group',
     seoDescription:
       'West Allis businesses: practical AI automation, integrations, and local SEO to compete in Milwaukee County without enterprise overhead.',
     keywords: ['West Allis automation', 'local SEO West Allis', 'Milwaukee metro AI consultant'],
@@ -215,7 +215,7 @@ export const localCities: LocalCity[] = [
     name: 'Menomonee Falls',
     countySlug: 'waukesha-county',
     countyName: 'Waukesha County',
-    seoTitle: 'Menomonee Falls AI Automation Consultant | Brew City Automation',
+    seoTitle: 'Menomonee Falls AI Automation Consultant | Badger Automation Group',
     seoDescription:
       'Menomonee Falls and Waukesha County: AI automation consulting, workflow design, customer-facing AI, and local SEO for small businesses.',
     keywords: ['Menomonee Falls automation', 'local SEO Menomonee Falls', 'Waukesha County AI consultant'],
@@ -239,7 +239,7 @@ export const localCities: LocalCity[] = [
     name: 'New Berlin',
     countySlug: 'waukesha-county',
     countyName: 'Waukesha County',
-    seoTitle: 'New Berlin WI Business Automation & SEO | Brew City Automation',
+    seoTitle: 'New Berlin WI Business Automation & SEO | Badger Automation Group',
     seoDescription:
       'New Berlin small businesses: AI automation consulting, CRM and workflow integrations, chat/voice AI, and local SEO for Waukesha County.',
     keywords: ['New Berlin automation', 'local SEO New Berlin WI', 'AI consultant New Berlin'],
@@ -263,7 +263,7 @@ export const localCities: LocalCity[] = [
     name: 'Mequon',
     countySlug: 'ozaukee-washington-walworth',
     countyName: 'Ozaukee County',
-    seoTitle: 'Mequon AI Consulting & Local SEO | Brew City Automation',
+    seoTitle: 'Mequon AI Consulting & Local SEO | Badger Automation Group',
     seoDescription:
       'Mequon and Ozaukee-area businesses: premium-appropriate AI automation, workflows, and local SEO strategy for competitive suburban markets.',
     keywords: ['Mequon business automation', 'local SEO Mequon', 'Ozaukee County AI consultant'],
@@ -287,7 +287,7 @@ export const localCities: LocalCity[] = [
     name: 'Lake Geneva',
     countySlug: 'ozaukee-washington-walworth',
     countyName: 'Walworth County',
-    seoTitle: 'Lake Geneva Area AI Automation & Local SEO | Brew City Automation',
+    seoTitle: 'Lake Geneva Area AI Automation & Local SEO | Badger Automation Group',
     seoDescription:
       'Lake Geneva and Walworth County businesses: seasonal demand, AI automation, customer-facing AI, and local SEO tuned to tourism and year-round residents.',
     keywords: ['Lake Geneva business automation', 'local SEO Lake Geneva', 'Walworth County AI consultant'],

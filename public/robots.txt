@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://brewcityautomation.com/sitemap-index.xml
+Sitemap: https://badgerautomationgroup.com/sitemap-index.xml

@@ -1,9 +1,9 @@
 {
-  "name": "brew-city-automation",
+  "name": "badger-automation-group",
   "type": "module",
   "version": "0.1.0",
   "private": true,
-  "description": "Brew City Automation — AI automation & local SEO for Milwaukee-area and southeastern Wisconsin businesses",
+  "description": "Badger Automation Group (Vaccaro Ventures LLC) — AI automation & local SEO for Milwaukee-area and southeastern Wisconsin businesses",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

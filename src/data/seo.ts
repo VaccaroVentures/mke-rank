@@ -2,7 +2,7 @@ import { nap } from './nap';
 import { site, counties } from './site';
 
 const businessId = `${site.url}#local-business`;
-const logoUrl = `${site.url}/favicon.svg`;
+const logoUrl = `${site.url}${site.logo}`;
 
 function postalAddress(): Record<string, unknown> {
   const a: Record<string, unknown> = {
@@ -44,6 +44,10 @@ export function localBusinessSchema(): Record<string, unknown> {
       longitude: nap.geo.longitude,
     },
     openingHoursSpecification: openingHoursSpecification(),
+    parentOrganization: {
+      '@type': 'Organization',
+      name: site.parentCompany,
+    },
     areaServed: counties.map((c) => ({
       '@type': 'AdministrativeArea',
       name: `${c.title}, Wisconsin`,

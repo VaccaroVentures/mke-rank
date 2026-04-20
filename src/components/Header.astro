@@ -6,15 +6,24 @@ const phoneLink = telHref();
 ---
 
 <header
-  class="sticky top-0 z-50 border-b border-white/10 bg-[#161e44]/85 backdrop-blur-md supports-[backdrop-filter]:bg-[#161e44]/70"
+  class="sticky top-0 z-50 border-b border-white/10 bg-[#1a0000]/90 backdrop-blur-md supports-[backdrop-filter]:bg-[#1a0000]/75"
 >
   <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6">
-    <a href="/" class="group flex flex-col gap-0 leading-tight" aria-label={site.name}>
-      <span class="font-display text-base font-bold uppercase tracking-tight text-white sm:text-lg">
-        {site.nameLine1}
-      </span>
-      <span class="font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70 sm:text-xs">
-        {site.nameLine2}
+    <a href="/" class="group flex items-center gap-3 leading-tight" aria-label={site.name}>
+      <img
+        src={site.logoMark}
+        alt={`${site.name} mark`}
+        width="365"
+        height="375"
+        class="h-11 w-auto shrink-0 object-contain drop-shadow-[0_1px_6px_rgba(0,0,0,0.35)] sm:h-12"
+      />
+      <span class="flex flex-col">
+        <span class="font-display text-base font-bold uppercase tracking-tight text-white sm:text-lg">
+          {site.nameLine1}
+        </span>
+        <span class="font-display text-[11px] font-semibold uppercase tracking-[0.18em] text-white/70 sm:text-xs">
+          {site.nameLine2}
+        </span>
       </span>
     </a>
     <nav class="hidden items-center gap-0.5 lg:flex" aria-label="Main">
@@ -40,7 +49,7 @@ const phoneLink = telHref();
       }
       <a
         href="/contact/"
-        class="ml-1 inline-flex items-center rounded-full bg-white px-4 py-2.5 text-sm font-bold uppercase tracking-wider text-[#161a20] shadow-lift transition hover:bg-white/90 xl:px-5"
+        class="ml-1 inline-flex items-center rounded-full bg-white px-4 py-2.5 text-sm font-bold uppercase tracking-wider text-[#1a0000] shadow-lift transition hover:bg-white/90 xl:px-5"
       >
         Book a call
       </a>
@@ -52,7 +61,7 @@ const phoneLink = telHref();
         Menu
       </summary>
       <div
-        class="absolute right-0 z-50 mt-2 max-h-[min(70vh,520px)] w-64 overflow-y-auto rounded-2xl border border-white/10 bg-[#161e44] p-2 shadow-lift"
+        class="absolute right-0 z-50 mt-2 max-h-[min(70vh,520px)] w-64 overflow-y-auto rounded-2xl border border-white/10 bg-[#660000] p-2 shadow-lift"
       >
         {
           mainNav.map((item) => (
@@ -76,7 +85,7 @@ const phoneLink = telHref();
         }
         <a
           href="/contact/"
-          class="mt-1 block rounded-xl bg-white px-3 py-2.5 text-center text-sm font-bold uppercase tracking-wider text-[#161a20]"
+          class="mt-1 block rounded-xl bg-white px-3 py-2.5 text-center text-sm font-bold uppercase tracking-wider text-[#1a0000]"
         >
           Book a call
         </a>
