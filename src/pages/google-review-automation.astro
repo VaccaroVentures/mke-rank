@@ -1,0 +1,478 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+import { nap, telHref } from '../data/nap';
+import { faqPageSchema, localBusinessSchema, serviceSchema } from '../data/seo';
+
+const phoneLink = telHref();
+const formName = 'google-review-automation-demo';
+const canonicalPath = '/google-review-automation/';
+const pageUrl = new URL(canonicalPath, site.url).toString();
+
+const proofPoints = [
+  'Automated SMS and email review requests',
+  'Follow-up timing tuned to your customer journey',
+  'Review links routed to your Google Business Profile',
+  'Owner-visible reporting on requests and responses',
+];
+
+const outcomes = [
+  {
+    label: 'Ask every time',
+    text: 'Trigger review requests after completed jobs, invoices, appointments, or manual approvals.',
+  },
+  {
+    label: 'Stay compliant',
+    text: 'No review gating, no incentives, and no fake reviews. The system asks real customers for honest feedback.',
+  },
+  {
+    label: 'Respond faster',
+    text: 'AI-drafted response workflows help you reply consistently while keeping the final review human-approved.',
+  },
+  {
+    label: 'Track the pipeline',
+    text: 'See sent requests, clicks, new reviews, and follow-up opportunities without digging through inboxes.',
+  },
+];
+
+const steps = [
+  'Connect your job completion, CRM, booking, or invoice trigger.',
+  'Send a branded request by SMS, email, or both after the customer experience is fresh.',
+  'Route happy customers to your Google review link and flag private feedback for follow-up.',
+  'Review monthly reporting so the process keeps improving instead of going stale.',
+];
+
+const fitList = [
+  'Home services',
+  'Medical and wellness practices',
+  'Automotive shops',
+  'Professional services',
+  'Multi-location local businesses',
+  'Any team that forgets to ask for reviews',
+];
+
+const faqs = [
+  {
+    question: 'Can this guarantee 5-star reviews?',
+    answer:
+      'No. The system is designed to ask real customers for honest feedback at the right time. It improves consistency and follow-up, but it does not buy, gate, or guarantee reviews.',
+  },
+  {
+    question: 'Do you need access to our Google account?',
+    answer:
+      'For basic review-request campaigns, we usually only need your public Google review link. If you want reporting, reply workflows, or Google Business Profile support, we can scope access during onboarding.',
+  },
+  {
+    question: 'How fast can this launch?',
+    answer:
+      'Most simple review-request campaigns can be mapped in one working session and launched after the message, trigger, and approval flow are confirmed.',
+  },
+  {
+    question: 'What tools can it connect to?',
+    answer:
+      'Badger Automation Group can connect the review workflow to common CRMs, booking tools, forms, spreadsheets, invoicing tools, and automation platforms used by local businesses.',
+  },
+];
+
+const pageDescription =
+  "Request a free demo of Badger Automation Group's Google review automation system for local businesses. Automate compliant review requests, follow-up, and reporting.";
+
+const jsonLd = [
+  localBusinessSchema(),
+  serviceSchema({
+    name: 'Google Review Automation System',
+    description: pageDescription,
+    url: pageUrl,
+    keywords: ['Google review automation', 'review request automation', 'review management', 'local SEO'],
+  }),
+  faqPageSchema(faqs),
+];
+---
+
+<BaseLayout
+  title="Google Review Automation Demo | Badger Automation Group"
+  description={pageDescription}
+  canonicalPath={canonicalPath}
+  keywords="Google review automation, automated review requests, Google Business Profile reviews, review management Milwaukee, local SEO reputation"
+  jsonLd={jsonLd}
+  ogImage="/campaign/google-review-automation-facebook-ad.png"
+  hideHeader
+  hideFooter
+>
+  <div class="min-h-screen bg-[#050000] text-white">
+    <header class="border-b border-white/10 bg-[#050000]/95">
+      <div class="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-4 md:px-6">
+        <a href="/" class="flex min-w-0 items-center gap-3" aria-label={site.name}>
+          <img
+            src={site.logoMark}
+            alt=""
+            width="302"
+            height="285"
+            class="h-10 w-auto shrink-0 object-contain"
+          />
+          <span class="min-w-0">
+            <span class="block truncate font-display text-base font-bold text-white sm:text-lg">
+              {site.name}
+            </span>
+            <span class="block truncate text-xs font-medium text-white/62">
+              Google review automation demo
+            </span>
+          </span>
+        </a>
+        <a
+          href="#lead"
+          class="shrink-0 rounded-md bg-white px-4 py-2.5 text-sm font-bold text-[#1a0000] shadow-[0_10px_30px_rgba(255,255,255,0.16)] transition hover:bg-white/90"
+        >
+          Free demo
+        </a>
+      </div>
+    </header>
+
+    <section class="relative overflow-hidden border-b border-white/10" aria-labelledby="hero-heading">
+      <div class="pointer-events-none absolute inset-0 bg-grid-fine bg-grid opacity-35" aria-hidden="true"></div>
+      <div
+        class="pointer-events-none absolute inset-0 bg-[linear-gradient(115deg,rgba(166,0,0,0.42),rgba(5,0,0,0.68)_43%,rgba(255,51,51,0.18))]"
+        aria-hidden="true"
+      ></div>
+
+      <div class="relative mx-auto grid max-w-6xl gap-10 px-4 py-12 md:px-6 md:py-16 lg:grid-cols-[minmax(0,1.05fr)_minmax(360px,0.85fr)] lg:items-start lg:gap-12">
+        <div>
+          <p class="text-sm font-bold text-[#ffb84d]">For local businesses running Facebook ads</p>
+          <h1 id="hero-heading" class="mt-4 max-w-4xl font-display text-4xl font-black leading-[1.02] text-white md:text-6xl">
+            Turn happy customers into more Google reviews with automated follow-up.
+          </h1>
+          <p class="mt-6 max-w-2xl text-lg leading-relaxed text-white/76">
+            Badger Automation Group builds a review-request system that sends the right message after the
+            job is done, routes customers to your Google review link, and keeps your team out of manual chase mode.
+          </p>
+
+          <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="#lead"
+              class="inline-flex min-h-12 items-center justify-center rounded-md bg-[#ff3333] px-6 py-3 text-center text-sm font-black text-white shadow-[0_18px_45px_rgba(255,51,51,0.34)] transition hover:bg-[#ff4d4d]"
+            >
+              Schedule your free demo
+            </a>
+            <a
+              href="#how-it-works"
+              class="inline-flex min-h-12 items-center justify-center rounded-md border border-white/20 bg-white/7 px-6 py-3 text-center text-sm font-bold text-white transition hover:bg-white/12"
+            >
+              See how it works
+            </a>
+          </div>
+
+          <dl class="mt-9 grid gap-3 sm:grid-cols-3">
+            <div class="rounded-lg border border-white/12 bg-white/7 p-4">
+              <dt class="text-xs font-bold text-white/56">Request flow</dt>
+              <dd class="mt-1 font-display text-2xl font-black text-white">24/7</dd>
+            </div>
+            <div class="rounded-lg border border-white/12 bg-white/7 p-4">
+              <dt class="text-xs font-bold text-white/56">Built around</dt>
+              <dd class="mt-1 font-display text-2xl font-black text-white">Google</dd>
+            </div>
+            <div class="rounded-lg border border-white/12 bg-white/7 p-4">
+              <dt class="text-xs font-bold text-white/56">Approach</dt>
+              <dd class="mt-1 font-display text-2xl font-black text-white">Compliant</dd>
+            </div>
+          </dl>
+
+          <div class="mt-9 grid gap-4 sm:grid-cols-[minmax(180px,260px)_1fr] sm:items-center">
+            <img
+              src="/campaign/google-review-automation-facebook-ad.png"
+              alt="Badger Automation Group Facebook ad creative promoting Google review automation"
+              width="1054"
+              height="1492"
+              loading="eager"
+              fetchpriority="high"
+              class="aspect-[527/746] w-full max-w-[260px] rounded-lg border border-white/12 object-cover shadow-[0_24px_70px_rgba(0,0,0,0.42)]"
+            />
+            <ul class="grid gap-3 text-sm text-white/78">
+              {
+                proofPoints.map((point) => (
+                  <li class="flex gap-3 rounded-lg border border-white/10 bg-black/24 p-3">
+                    <span class="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#ff3333]" aria-hidden="true"></span>
+                    <span>{point}</span>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+
+        <section
+          id="lead"
+          class="rounded-lg border border-white/12 bg-white p-5 text-[#1a0000] shadow-[0_28px_80px_rgba(0,0,0,0.52)] md:p-6 lg:sticky lg:top-6"
+          aria-labelledby="lead-heading"
+        >
+          <p class="text-sm font-black text-[#a60000]">Free demo</p>
+          <h2 id="lead-heading" class="mt-2 font-display text-2xl font-black leading-tight text-[#1a0000]">
+            See the review engine for your business
+          </h2>
+          <p class="mt-2 text-sm leading-relaxed text-[#3d1616]/72">
+            Submit the form and we'll show you what the request flow, follow-up, and reporting could look like for your
+            customer journey.
+          </p>
+
+          <form
+            class="mt-5 space-y-4"
+            name={formName}
+            method="POST"
+            action="/thank-you/"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+          >
+            <input type="hidden" name="form-name" value={formName} />
+            <input type="hidden" name="context" value="Google review automation Facebook ad landing page" />
+            <input type="hidden" name="utm_source" />
+            <input type="hidden" name="utm_medium" />
+            <input type="hidden" name="utm_campaign" />
+            <input type="hidden" name="utm_content" />
+            <input type="hidden" name="utm_term" />
+            <input type="hidden" name="fbclid" />
+            <input type="hidden" name="gclid" />
+            <p class="hidden">
+              <label>
+                Do not fill this out: <input name="bot-field" />
+              </label>
+            </p>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="review-name" class="block text-sm font-bold text-[#1a0000]">Name</label>
+                <input
+                  id="review-name"
+                  name="name"
+                  type="text"
+                  required
+                  autocomplete="name"
+                  class="mt-1.5 w-full rounded-md border border-[#a60000]/18 bg-[#fff5f6] px-3 py-2.5 text-[#1a0000] shadow-inner focus:border-[#ff3333] focus:outline-none focus:ring-2 focus:ring-[#ff3333]/25"
+                />
+              </div>
+              <div>
+                <label for="review-business" class="block text-sm font-bold text-[#1a0000]">Business</label>
+                <input
+                  id="review-business"
+                  name="business"
+                  type="text"
+                  required
+                  autocomplete="organization"
+                  class="mt-1.5 w-full rounded-md border border-[#a60000]/18 bg-[#fff5f6] px-3 py-2.5 text-[#1a0000] shadow-inner focus:border-[#ff3333] focus:outline-none focus:ring-2 focus:ring-[#ff3333]/25"
+                />
+              </div>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label for="review-email" class="block text-sm font-bold text-[#1a0000]">Email</label>
+                <input
+                  id="review-email"
+                  name="email"
+                  type="email"
+                  required
+                  autocomplete="email"
+                  class="mt-1.5 w-full rounded-md border border-[#a60000]/18 bg-[#fff5f6] px-3 py-2.5 text-[#1a0000] shadow-inner focus:border-[#ff3333] focus:outline-none focus:ring-2 focus:ring-[#ff3333]/25"
+                />
+              </div>
+              <div>
+                <label for="review-phone" class="block text-sm font-bold text-[#1a0000]">Phone</label>
+                <input
+                  id="review-phone"
+                  name="phone"
+                  type="tel"
+                  required
+                  autocomplete="tel"
+                  class="mt-1.5 w-full rounded-md border border-[#a60000]/18 bg-[#fff5f6] px-3 py-2.5 text-[#1a0000] shadow-inner focus:border-[#ff3333] focus:outline-none focus:ring-2 focus:ring-[#ff3333]/25"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="review-link" class="block text-sm font-bold text-[#1a0000]">
+                Website or Google Business Profile
+              </label>
+              <input
+                id="review-link"
+                name="website_or_gbp"
+                type="text"
+                inputmode="url"
+                autocomplete="url"
+                placeholder="https://"
+                class="mt-1.5 w-full rounded-md border border-[#a60000]/18 bg-[#fff5f6] px-3 py-2.5 text-[#1a0000] shadow-inner focus:border-[#ff3333] focus:outline-none focus:ring-2 focus:ring-[#ff3333]/25"
+              />
+            </div>
+
+            <div>
+              <label for="review-volume" class="block text-sm font-bold text-[#1a0000]">
+                Completed jobs or appointments per month
+              </label>
+              <select
+                id="review-volume"
+                name="monthly_customer_volume"
+                class="mt-1.5 w-full rounded-md border border-[#a60000]/18 bg-[#fff5f6] px-3 py-2.5 text-[#1a0000] shadow-inner focus:border-[#ff3333] focus:outline-none focus:ring-2 focus:ring-[#ff3333]/25"
+              >
+                <option value="">Select one</option>
+                <option>Fewer than 25</option>
+                <option>25 to 75</option>
+                <option>76 to 200</option>
+                <option>200+</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="review-message" class="block text-sm font-bold text-[#1a0000]">What should we know?</label>
+              <textarea
+                id="review-message"
+                name="message"
+                rows={3}
+                placeholder="CRM, booking tool, current review count, or biggest follow-up problem"
+                class="mt-1.5 w-full rounded-md border border-[#a60000]/18 bg-[#fff5f6] px-3 py-2.5 text-[#1a0000] shadow-inner focus:border-[#ff3333] focus:outline-none focus:ring-2 focus:ring-[#ff3333]/25"
+              ></textarea>
+            </div>
+
+            <p class="text-xs leading-relaxed text-[#3d1616]/62">
+              By submitting, you agree to be contacted by {site.name}. No spam. We are independent and not affiliated
+              with Google LLC.
+            </p>
+
+            <button
+              type="submit"
+              class="w-full rounded-md bg-[#a60000] px-5 py-3.5 text-sm font-black text-white shadow-[0_16px_40px_rgba(166,0,0,0.3)] transition hover:bg-[#850000]"
+            >
+              Request my free demo
+            </button>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <section class="border-b border-white/10 bg-[#100000] py-12 md:py-16" aria-labelledby="outcomes-heading">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <div class="max-w-3xl">
+          <p class="text-sm font-bold text-[#ffb84d]">What you get</p>
+          <h2 id="outcomes-heading" class="mt-3 font-display text-3xl font-black text-white md:text-4xl">
+            A review request process your team can actually keep running.
+          </h2>
+        </div>
+
+        <div class="mt-9 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+          {
+            outcomes.map((item) => (
+              <article class="rounded-lg border border-white/10 bg-white/[0.055] p-5">
+                <h3 class="font-display text-lg font-black text-white">{item.label}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-white/70">{item.text}</p>
+              </article>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="border-b border-white/10 bg-[#050000] py-12 md:py-16" aria-labelledby="process-heading">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 md:px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <div>
+          <p class="text-sm font-bold text-[#ffb84d]">How it works</p>
+          <h2 id="process-heading" class="mt-3 font-display text-3xl font-black text-white md:text-4xl">
+            Built around the moment your customer is most likely to respond.
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-white/70">
+            The point is not to pressure customers. The point is to remove the missed handoffs that keep good
+            experiences from becoming public proof.
+          </p>
+        </div>
+
+        <ol class="grid gap-4">
+          {
+            steps.map((step, index) => (
+              <li class="grid gap-4 rounded-lg border border-white/10 bg-white/[0.055] p-5 sm:grid-cols-[52px_1fr] sm:items-start">
+                <span class="flex h-12 w-12 items-center justify-center rounded-md bg-[#ff3333] font-display text-lg font-black text-white">
+                  {String(index + 1).padStart(2, '0')}
+                </span>
+                <p class="text-base leading-relaxed text-white/76">{step}</p>
+              </li>
+            ))
+          }
+        </ol>
+      </div>
+    </section>
+
+    <section class="border-b border-white/10 bg-[#fff5f6] py-12 text-[#1a0000] md:py-16" aria-labelledby="fit-heading">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 md:px-6 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
+        <div>
+          <p class="text-sm font-black text-[#a60000]">Best fit</p>
+          <h2 id="fit-heading" class="mt-3 font-display text-3xl font-black md:text-4xl">
+            Useful for any local business where trust closes the deal.
+          </h2>
+          <p class="mt-4 text-base leading-relaxed text-[#3d1616]/74">
+            If customers already tell you they're happy, this system makes the ask consistent, measurable, and easy for
+            your team to approve.
+          </p>
+        </div>
+
+        <ul class="grid gap-3 sm:grid-cols-2">
+          {
+            fitList.map((item) => (
+              <li class="rounded-lg border border-[#a60000]/12 bg-white p-4 text-sm font-bold shadow-[0_12px_30px_rgba(26,0,0,0.08)]">
+                {item}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="bg-[#050000] py-12 md:py-16" aria-labelledby="faq-heading">
+      <div class="mx-auto grid max-w-6xl gap-10 px-4 md:px-6 lg:grid-cols-[0.75fr_1.25fr]">
+        <div>
+          <p class="text-sm font-bold text-[#ffb84d]">FAQ</p>
+          <h2 id="faq-heading" class="mt-3 font-display text-3xl font-black text-white md:text-4xl">
+            Straight answers before the demo.
+          </h2>
+          <div class="mt-6">
+            <a
+              href="#lead"
+              class="inline-flex min-h-12 items-center justify-center rounded-md bg-[#ff3333] px-6 py-3 text-sm font-black text-white transition hover:bg-[#ff4d4d]"
+            >
+              Request demo
+            </a>
+          </div>
+        </div>
+
+        <div class="space-y-3">
+          {
+            faqs.map((faq) => (
+              <details class="group rounded-lg border border-white/10 bg-white/[0.055] p-5">
+                <summary class="cursor-pointer list-none font-display text-lg font-black text-white">
+                  {faq.question}
+                </summary>
+                <p class="mt-3 text-sm leading-relaxed text-white/70">{faq.answer}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <footer class="border-t border-white/10 bg-[#100000]">
+      <div class="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-7 text-sm text-white/60 md:flex-row md:items-center md:justify-between md:px-6">
+        <p>&copy; {new Date().getFullYear()} {site.parentCompany} &middot; {site.name}</p>
+        <p>
+          {phoneLink && <a href={phoneLink} class="font-bold text-white hover:underline">{nap.telephone}</a>}
+          {phoneLink && <span class="mx-2 text-white/30">|</span>}
+          <a href={`mailto:${site.email}`} class="font-bold text-white hover:underline">{site.email}</a>
+        </p>
+      </div>
+    </footer>
+  </div>
+
+  <script is:inline>
+    const campaignForm = document.querySelector('form[name="google-review-automation-demo"]');
+    if (campaignForm) {
+      const params = new URLSearchParams(window.location.search);
+      ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'].forEach((key) => {
+        const input = campaignForm.querySelector(`input[name="${key}"]`);
+        const value = params.get(key);
+        if (input && value) input.value = value;
+      });
+    }
+  </script>
+</BaseLayout>

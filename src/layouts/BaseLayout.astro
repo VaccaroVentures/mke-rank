@@ -13,12 +13,28 @@ interface Props {
   keywords?: string;
   /** Extra JSON-LD graphs (Organization, FAQPage, Service, etc.) */
   jsonLd?: Record<string, unknown>[];
+  /** Relative or absolute Open Graph image override */
+  ogImage?: string;
+  /** Used by focused paid-ad landing pages */
+  hideHeader?: boolean;
+  hideFooter?: boolean;
 }
 
-const { title, description, canonicalPath = Astro.url.pathname, keywords, jsonLd = [] } = Astro.props;
+const {
+  title,
+  description,
+  canonicalPath = Astro.url.pathname,
+  keywords,
+  jsonLd = [],
+  ogImage,
+  hideHeader = false,
+  hideFooter = false,
+} = Astro.props;
 const canonical = new URL(canonicalPath, site.url).toString();
 const fullTitle = title.includes(site.name) ? title : `${title} | ${site.name}`;
-const ogImage = `${site.url}${site.logo}`;
+const socialImage = ogImage
+  ? new URL(ogImage, site.url).toString()
+  : `${site.url}${site.logo}`;
 ---
 
 <!doctype html>
@@ -52,11 +68,11 @@ const ogImage = `${site.url}${site.logo}`;
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content={site.name} />
-    <meta property="og:image" content={ogImage} />
+    <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={fullTitle} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content={ogImage} />
+    <meta name="twitter:image" content={socialImage} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -70,11 +86,11 @@ const ogImage = `${site.url}${site.logo}`;
     }
   </head>
   <body class="min-h-screen flex flex-col font-sans text-badger-700 antialiased">
-    <Header />
+    {!hideHeader && <Header />}
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    {!hideFooter && <Footer />}
     <script
       is:inline
       src="https://widgets.leadconnectorhq.com/loader.js"
