@@ -30,6 +30,12 @@
   .article-markdown a {
     @apply font-medium text-badger underline decoration-gold/70 underline-offset-2 hover:decoration-badger;
   }
+  .article-markdown img {
+    @apply mt-6 mb-2 w-full rounded-2xl;
+  }
+  .article-markdown ol {
+    @apply mt-4 list-decimal space-y-2 pl-5 marker:text-gold marker:font-semibold;
+  }
 
   .glass-header {
     @apply border-b border-white/10 bg-ink/75 backdrop-blur-xl supports-[backdrop-filter]:bg-ink/55;
