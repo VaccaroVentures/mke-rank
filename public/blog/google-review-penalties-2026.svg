@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a0000"/>
+      <stop offset="100%" style="stop-color:#2d0000"/>
+    </linearGradient>
+    <linearGradient id="redGlow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ff3333;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#a60000;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="20" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="200" cy="315" r="400" fill="url(#redGlow)"/>
+  <rect x="0" y="0" width="1200" height="4" fill="#a60000"/>
+  <rect x="0" y="626" width="1200" height="4" fill="#a60000"/>
+
+  <g transform="translate(100, 180)">
+    <polygon points="50,0 120,0 170,50 170,120 120,170 50,170 0,120 0,50" fill="#a60000" filter="url(#glow)"/>
+    <polygon points="55,8 115,8 160,53 160,115 115,160 55,160 10,115 10,53" fill="none" stroke="#fff" stroke-width="3"/>
+    <text x="85" y="100" font-family="Arial Black, Arial, sans-serif" font-size="42" font-weight="900" fill="#fff" text-anchor="middle" letter-spacing="2">STOP</text>
+  </g>
+
+  <g transform="translate(105, 370)">
+    <polygon points="50,0 100,86 0,86" fill="none" stroke="#ff3333" stroke-width="3" filter="url(#glow)"/>
+    <text x="50" y="72" font-family="Arial, sans-serif" font-size="52" font-weight="900" fill="#ff3333" text-anchor="middle">!</text>
+  </g>
+
+  <text x="330" y="195" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff" letter-spacing="-0.5">YOUR GOOGLE REVIEWS</text>
+  <text x="330" y="255" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" fill="#ffffff" letter-spacing="-0.5">ARE GETTING YOU</text>
+  <text x="330" y="320" font-family="Arial Black, Arial, sans-serif" font-size="52" font-weight="900" fill="#ff3333" letter-spacing="1" filter="url(#glow)">PENALIZED</text>
+
+  <rect x="330" y="345" width="120" height="3" fill="#a60000" rx="1.5"/>
+
+  <text x="330" y="390" font-family="Arial, sans-serif" font-size="22" fill="#ff8a8a" font-weight="600">Google's 2026 updates are wiping businesses</text>
+  <text x="330" y="420" font-family="Arial, sans-serif" font-size="22" fill="#ff8a8a" font-weight="600">from the Map Pack. Is yours next?</text>
+
+  <circle cx="345" cy="468" r="4" fill="#ff3333"/>
+  <text x="360" y="474" font-family="Arial, sans-serif" font-size="18" fill="#ffcccc">Review spikes flagged as spam</text>
+
+  <circle cx="345" cy="500" r="4" fill="#ff3333"/>
+  <text x="360" y="506" font-family="Arial, sans-serif" font-size="18" fill="#ffcccc">On-site Wi-Fi reviews blocked</text>
+
+  <circle cx="345" cy="532" r="4" fill="#ff3333"/>
+  <text x="360" y="538" font-family="Arial, sans-serif" font-size="18" fill="#ffcccc">Old reviews losing ranking power</text>
+
+  <circle cx="650" cy="468" r="4" fill="#ff3333"/>
+  <text x="665" y="474" font-family="Arial, sans-serif" font-size="18" fill="#ffcccc">90-Day Rule now in effect</text>
+
+  <circle cx="650" cy="500" r="4" fill="#ff3333"/>
+  <text x="665" y="506" font-family="Arial, sans-serif" font-size="18" fill="#ffcccc">Shadow bans on manipulated profiles</text>
+
+  <circle cx="650" cy="532" r="4" fill="#ff3333"/>
+  <text x="665" y="538" font-family="Arial, sans-serif" font-size="18" fill="#ffcccc">Mass email blasts trigger penalties</text>
+
+  <rect x="0" y="580" width="1200" height="46" fill="#a60000" opacity="0.85"/>
+  <text x="600" y="610" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle" letter-spacing="3">READ THE FULL BREAKDOWN  |  PROTECT YOUR RANKING NOW</text>
+</svg>
