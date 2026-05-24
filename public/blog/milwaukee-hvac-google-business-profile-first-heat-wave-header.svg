@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">HVAC heat wave article header</title>
+  <desc id="desc">Badger Automation Group editorial artwork for an HVAC Google Business Profile article.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#160202"/>
+      <stop offset="48%" stop-color="#6f0000"/>
+      <stop offset="100%" stop-color="#d57a00"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8ea" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#f1dfbc" stop-opacity="0.88"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1320" cy="180" r="220" fill="#ffcf66" fill-opacity="0.22"/>
+  <circle cx="1430" cy="125" r="84" fill="#ffd98c" fill-opacity="0.78"/>
+  <g stroke="#ffffff" stroke-opacity="0.1">
+    <path d="M0 190H1600M0 350H1600M0 510H1600M0 670H1600"/>
+    <path d="M210 0V900M470 0V900M730 0V900M990 0V900M1250 0V900"/>
+  </g>
+
+  <rect x="86" y="110" width="838" height="680" rx="38" fill="url(#panel)"/>
+  <rect x="1020" y="166" width="470" height="562" rx="34" fill="#2a0707" fill-opacity="0.84" stroke="#ffcb67" stroke-opacity="0.36"/>
+
+  <text x="146" y="190" fill="#8e1b00" font-family="Rubik, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="5">BADGER AUTOMATION GROUP</text>
+  <text x="146" y="282" fill="#210707" font-family="Rubik, Arial, sans-serif" font-size="80" font-weight="800">HVAC GBP prep</text>
+  <text x="146" y="360" fill="#210707" font-family="Rubik, Arial, sans-serif" font-size="80" font-weight="800">before the</text>
+  <text x="146" y="438" fill="#a60000" font-family="Rubik, Arial, sans-serif" font-size="86" font-weight="800">first heat wave</text>
+  <text x="146" y="514" fill="#4c2720" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">Milwaukee-area HVAC operators need the profile, photos,</text>
+  <text x="146" y="552" fill="#4c2720" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">reviews, and landing pages ready before the phones spike.</text>
+
+  <g transform="translate(1120 242)">
+    <rect x="0" y="0" width="278" height="340" rx="26" fill="#fff9ef"/>
+    <rect x="24" y="26" width="230" height="36" rx="10" fill="#7e1010"/>
+    <rect x="24" y="82" width="142" height="20" rx="8" fill="#d9bf9f"/>
+    <rect x="24" y="118" width="168" height="20" rx="8" fill="#d9bf9f"/>
+    <rect x="24" y="154" width="120" height="20" rx="8" fill="#d9bf9f"/>
+    <rect x="24" y="214" width="230" height="82" rx="18" fill="#f2e2c7"/>
+    <circle cx="205" cy="251" r="27" fill="#ffb01f"/>
+    <path d="M205 210V184M205 318V292M164 251H138M272 251H246M176 222L156 202M234 280L254 300M176 280L156 300M234 222L254 202" stroke="#8f1400" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(1012 608)">
+    <path d="M0 76C44 28 110 0 182 0H486V106H0Z" fill="#ffb52d"/>
+    <rect x="152" y="28" width="180" height="48" rx="12" fill="#fff8ea"/>
+    <rect x="62" y="74" width="330" height="66" rx="22" fill="#8c0d0d"/>
+    <circle cx="138" cy="148" r="32" fill="#121212"/>
+    <circle cx="354" cy="148" r="32" fill="#121212"/>
+    <rect x="178" y="84" width="110" height="18" rx="9" fill="#ffe6b5"/>
+  </g>
+
+  <text x="146" y="700" fill="#8e1b00" font-family="Rubik, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">CHECKLIST</text>
+  <text x="146" y="744" fill="#210707" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="600">Hours · Services · Posts · Photos · Reviews · Landing pages</text>
+</svg>

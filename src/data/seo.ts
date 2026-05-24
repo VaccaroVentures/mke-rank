@@ -171,3 +171,42 @@ export function breadcrumbSchema(items: { name: string; path: string }[]) {
     })),
   };
 }
+
+export function blogPostingSchema(args: {
+  headline: string;
+  description: string;
+  url: string;
+  datePublished: string;
+  dateModified?: string;
+  image?: string[];
+  keywords?: string[];
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    headline: args.headline,
+    description: args.description,
+    url: args.url,
+    datePublished: args.datePublished,
+    dateModified: args.dateModified ?? args.datePublished,
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': args.url,
+    },
+    author: {
+      '@type': 'Organization',
+      name: site.name,
+      url: site.url,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: site.name,
+      logo: {
+        '@type': 'ImageObject',
+        url: logoUrl,
+      },
+    },
+    ...(args.image?.length ? { image: args.image } : {}),
+    ...(args.keywords?.length ? { keywords: args.keywords.join(', ') } : {}),
+  };
+}

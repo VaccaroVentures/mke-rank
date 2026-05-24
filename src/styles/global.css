@@ -15,6 +15,9 @@
   .article-markdown h2 {
     @apply mt-10 font-display text-2xl font-bold text-badger;
   }
+  .article-markdown h3 {
+    @apply mt-8 font-display text-xl font-semibold text-ink;
+  }
   .article-markdown p {
     @apply mt-4 leading-relaxed;
   }
@@ -26,6 +29,9 @@
   }
   .article-markdown ul {
     @apply mt-4 list-disc space-y-2 pl-5 marker:text-gold;
+  }
+  .article-markdown ol {
+    @apply mt-4 list-decimal space-y-2 pl-5 marker:font-semibold marker:text-badger;
   }
   .article-markdown a {
     @apply font-medium text-badger underline decoration-gold/70 underline-offset-2 hover:decoration-badger;

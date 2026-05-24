@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import type { CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { blogPostingSchema, breadcrumbSchema } from '../../data/seo';
+import { site } from '../../data/site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -17,9 +19,45 @@ interface Props {
 
 const { post } = Astro.props;
 const { Content } = await post.render();
+const canonicalPath = `/blog/${post.slug}/`;
+const articleUrl = new URL(canonicalPath, site.url).toString();
+const schemaImages = [post.data.socialImage, post.data.heroImage]
+  .filter(Boolean)
+  .map((path) => new URL(path!, site.url).toString());
+const publishedTime = post.data.pubDate.toISOString();
+const modifiedTime = (post.data.updatedDate ?? post.data.pubDate).toISOString();
+const jsonLd = [
+  breadcrumbSchema([
+    { name: 'Home', path: '/' },
+    { name: 'Insights', path: '/blog/' },
+    { name: post.data.title, path: canonicalPath },
+  ]),
+  blogPostingSchema({
+    headline: post.data.title,
+    description: post.data.description,
+    url: articleUrl,
+    datePublished: publishedTime,
+    dateModified: modifiedTime,
+    image: schemaImages,
+    keywords: post.data.keywords,
+  }),
+];
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  canonicalPath={canonicalPath}
+  keywords={post.data.keywords?.join(', ')}
+  jsonLd={jsonLd}
+  ogImage={post.data.socialImage ?? post.data.heroImage}
+  ogImageAlt={post.data.socialImageAlt ?? post.data.heroImageAlt}
+  ogImageWidth={1200}
+  ogImageHeight={630}
+  ogType="article"
+  publishedTime={publishedTime}
+  modifiedTime={modifiedTime}
+>
   <article class="mx-auto max-w-3xl px-4 py-14 md:px-6 md:py-20">
     <p class="text-xs text-badger/55">
       {post.data.pubDate.toLocaleDateString('en-US', {
@@ -30,6 +68,20 @@ const { Content } = await post.render();
     </p>
     <h1 class="mt-3 font-display text-4xl font-bold text-badger">{post.data.title}</h1>
     <p class="mt-4 text-lg text-badger/80">{post.data.description}</p>
+
+    {
+      post.data.heroImage && (
+        <img
+          src={post.data.heroImage}
+          alt={post.data.heroImageAlt ?? ''}
+          width="1600"
+          height="900"
+          loading="eager"
+          fetchpriority="high"
+          class="mt-8 aspect-[16/9] w-full rounded-3xl border border-badger/10 object-cover shadow-card"
+        />
+      )
+    }
 
     <div class="article-markdown mt-10 max-w-none text-badger/90">
       <Content />
