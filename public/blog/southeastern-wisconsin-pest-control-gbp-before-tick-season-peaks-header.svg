@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">Pest control tick season article header</title>
+  <desc id="desc">Badger Automation Group editorial artwork for a pest control Google Business Profile article.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#120202"/>
+      <stop offset="52%" stop-color="#7d0909"/>
+      <stop offset="100%" stop-color="#d79b1f"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff9ee" stop-opacity="0.97"/>
+      <stop offset="100%" stop-color="#f0dfbc" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1360" cy="140" r="96" fill="#ffd67d" fill-opacity="0.9"/>
+  <circle cx="1280" cy="176" r="210" fill="#ffd67d" fill-opacity="0.16"/>
+  <g stroke="#ffffff" stroke-opacity="0.1">
+    <path d="M0 180H1600M0 340H1600M0 500H1600M0 660H1600"/>
+    <path d="M208 0V900M468 0V900M728 0V900M988 0V900M1248 0V900"/>
+  </g>
+
+  <rect x="84" y="104" width="852" height="694" rx="38" fill="url(#panel)"/>
+  <rect x="1012" y="156" width="496" height="582" rx="34" fill="#220606" fill-opacity="0.86" stroke="#ffd17a" stroke-opacity="0.34"/>
+
+  <text x="144" y="188" fill="#8e1b00" font-family="Rubik, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="5">BADGER AUTOMATION GROUP</text>
+  <text x="144" y="282" fill="#1f0707" font-family="Rubik, Arial, sans-serif" font-size="76" font-weight="800">Pest control GBP</text>
+  <text x="144" y="360" fill="#1f0707" font-family="Rubik, Arial, sans-serif" font-size="76" font-weight="800">before tick</text>
+  <text x="144" y="438" fill="#a60000" font-family="Rubik, Arial, sans-serif" font-size="86" font-weight="800">season peaks</text>
+  <text x="144" y="514" fill="#4c2720" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">Service lines, photos, reviews, and landing-page handoff</text>
+  <text x="144" y="552" fill="#4c2720" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">for southeastern Wisconsin pest operators.</text>
+
+  <g transform="translate(1086 214)">
+    <path d="M126 0L234 42V172C234 264 177 342 126 370C75 342 18 264 18 172V42Z" fill="#fff8ea"/>
+    <path d="M126 52C156 52 180 75 180 104C180 124 168 142 150 151C168 160 180 178 180 198C180 227 156 250 126 250C96 250 72 227 72 198C72 178 84 160 102 151C84 142 72 124 72 104C72 75 96 52 126 52Z" fill="#a60000"/>
+    <circle cx="126" cy="104" r="17" fill="#fff1d1"/>
+    <circle cx="126" cy="198" r="17" fill="#fff1d1"/>
+    <path d="M126 121V181M94 136L58 120M158 136L194 120M94 166L56 182M158 166L196 182M94 214L62 244M158 214L190 244" stroke="#fff1d1" stroke-width="10" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(1048 566)">
+    <path d="M0 84C46 30 114 0 188 0H512V112H0Z" fill="#ffb52d"/>
+    <rect x="178" y="30" width="194" height="50" rx="12" fill="#fff8ea"/>
+    <rect x="76" y="82" width="350" height="68" rx="22" fill="#8c0d0d"/>
+    <circle cx="154" cy="158" r="32" fill="#121212"/>
+    <circle cx="378" cy="158" r="32" fill="#121212"/>
+    <rect x="214" y="88" width="118" height="18" rx="9" fill="#ffe6b5"/>
+  </g>
+
+  <g transform="translate(144 642)">
+    <text x="0" y="0" fill="#8e1b00" font-family="Rubik, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">LATE-SPRING CHECKLIST</text>
+    <text x="0" y="46" fill="#210707" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="600">Hours · Tick services · Seasonal posts · Photos · Reviews · Area pages</text>
+  </g>
+</svg>
