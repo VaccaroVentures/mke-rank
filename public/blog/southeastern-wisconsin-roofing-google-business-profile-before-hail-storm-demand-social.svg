@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Roofing storm-demand social card</title>
+  <desc id="desc">Badger Automation Group social image for a roofing Google Business Profile article.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#140203"/>
+      <stop offset="55%" stop-color="#8a0909"/>
+      <stop offset="100%" stop-color="#df991f"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1010" cy="120" r="170" fill="#ffd68d" fill-opacity="0.14"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.12">
+    <path d="M0 160H1200M0 315H1200M0 470H1200"/>
+    <path d="M180 0V630M370 0V630M560 0V630M750 0V630M940 0V630"/>
+  </g>
+
+  <rect x="62" y="66" width="690" height="498" rx="30" fill="#fff7e8" fill-opacity="0.97"/>
+  <text x="104" y="134" fill="#8d1807" font-family="Rubik, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4">BADGER AUTOMATION GROUP</text>
+  <text x="104" y="224" fill="#22090a" font-family="Rubik, Arial, sans-serif" font-size="62" font-weight="800">Roofing GBP</text>
+  <text x="104" y="290" fill="#22090a" font-family="Rubik, Arial, sans-serif" font-size="62" font-weight="800">before hail</text>
+  <text x="104" y="358" fill="#a60000" font-family="Rubik, Arial, sans-serif" font-size="66" font-weight="800">demand spikes</text>
+  <text x="104" y="428" fill="#543129" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">Areas, posts, proof, reviews, and</text>
+  <text x="104" y="464" fill="#543129" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">landing pages for SE Wisconsin roofers.</text>
+
+  <g transform="translate(810 102)">
+    <rect x="0" y="0" width="312" height="404" rx="28" fill="#1f0708" fill-opacity="0.86" stroke="#ffd17a" stroke-opacity="0.42"/>
+    <path d="M72 108C108 108 138 138 138 174C138 177 138 180 137 183C163 188 182 210 182 237C182 269 156 295 124 295H36C16 295 0 279 0 259C0 242 11 228 27 222C29 158 45 108 72 108Z" fill="#fff8ea"/>
+    <circle cx="24" cy="320" r="9" fill="#ffcb67"/>
+    <circle cx="68" cy="338" r="9" fill="#ffcb67"/>
+    <circle cx="112" cy="322" r="9" fill="#ffcb67"/>
+    <circle cx="154" cy="340" r="9" fill="#ffcb67"/>
+    <path d="M94 158L66 220H98L72 274" fill="none" stroke="#a60000" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M190 284L250 234L310 284" fill="none" stroke="#fff4dc" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M212 284H288L274 320H226Z" fill="#f1e0c1"/>
+    <path d="M76 52H278" stroke="#b98f8f" stroke-width="18" stroke-linecap="round"/>
+    <path d="M214 84H276" stroke="#b98f8f" stroke-width="18" stroke-linecap="round"/>
+  </g>
+
+  <text x="812" y="560" fill="#fff1d2" font-family="Rubik, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="3">MILWAUKEE + SE WISCONSIN</text>
+</svg>
