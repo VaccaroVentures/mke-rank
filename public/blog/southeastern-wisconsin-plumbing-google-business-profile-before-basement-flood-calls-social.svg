@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Plumbing flood-readiness social card</title>
+  <desc id="desc">Badger Automation Group social image for a plumbing Google Business Profile article about basement flood and sump-pump calls.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#120808"/>
+      <stop offset="55%" stop-color="#941a12"/>
+      <stop offset="100%" stop-color="#d99833"/>
+    </linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#2b6f91"/>
+      <stop offset="100%" stop-color="#5ca5c1"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1018" cy="112" r="82" fill="#ffd991" fill-opacity="0.94"/>
+  <circle cx="948" cy="92" r="166" fill="#ffd991" fill-opacity="0.14"/>
+
+  <g stroke="#ffffff" stroke-opacity="0.12">
+    <path d="M0 160H1200M0 315H1200M0 470H1200"/>
+    <path d="M180 0V630M370 0V630M560 0V630M750 0V630M940 0V630"/>
+  </g>
+
+  <rect x="60" y="64" width="700" height="502" rx="30" fill="#fff7e9" fill-opacity="0.97"/>
+  <text x="102" y="132" fill="#8d1d0f" font-family="Rubik, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4">BADGER AUTOMATION GROUP</text>
+  <text x="102" y="220" fill="#210808" font-family="Rubik, Arial, sans-serif" font-size="58" font-weight="800">Plumbing GBP before</text>
+  <text x="102" y="286" fill="#210808" font-family="Rubik, Arial, sans-serif" font-size="58" font-weight="800">basement flood and</text>
+  <text x="102" y="354" fill="#a60000" font-family="Rubik, Arial, sans-serif" font-size="64" font-weight="800">sump-pump spikes</text>
+  <text x="102" y="426" fill="#553330" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">Emergency routing, posts, photos, reviews,</text>
+  <text x="102" y="462" fill="#553330" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">and landing pages for SE Wisconsin plumbers.</text>
+
+  <g transform="translate(818 116)">
+    <rect x="0" y="0" width="308" height="396" rx="28" fill="#211010" fill-opacity="0.86" stroke="#ffd28a" stroke-opacity="0.42"/>
+    <rect x="34" y="34" width="238" height="42" rx="12" fill="#fff8ea"/>
+    <rect x="34" y="102" width="168" height="18" rx="8" fill="#b99696"/>
+    <rect x="34" y="136" width="190" height="18" rx="8" fill="#b99696"/>
+    <rect x="34" y="170" width="144" height="18" rx="8" fill="#b99696"/>
+    <rect x="34" y="226" width="238" height="126" rx="20" fill="#e8f1f4"/>
+    <ellipse cx="154" cy="290" rx="66" ry="62" fill="#dce8ec" stroke="#4d6871" stroke-width="9"/>
+    <circle cx="154" cy="290" r="21" fill="#4d6871"/>
+    <path d="M154 228V188" stroke="#4d6871" stroke-width="9" stroke-linecap="round"/>
+    <path d="M216 290H250" stroke="#4d6871" stroke-width="9" stroke-linecap="round"/>
+    <path d="M154 352V374" stroke="#4d6871" stroke-width="9" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(74 510)">
+    <path d="M0 18C44 8 88 30 132 18C176 6 220 30 264 18C308 6 352 30 396 18C440 6 484 30 528 18C572 6 616 30 686 18V56H0Z" fill="url(#water)"/>
+  </g>
+
+  <text x="816" y="560" fill="#fff1d2" font-family="Rubik, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="3">SOUTHEASTERN WISCONSIN</text>
+</svg>
