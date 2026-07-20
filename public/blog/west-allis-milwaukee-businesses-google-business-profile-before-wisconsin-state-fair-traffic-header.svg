@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">West Allis and Milwaukee State Fair Google Business Profile article header</title>
+  <desc id="desc">Badger Automation Group editorial artwork for a Google Business Profile article about Wisconsin State Fair traffic.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#150303"/>
+      <stop offset="52%" stop-color="#7e0f0f"/>
+      <stop offset="100%" stop-color="#d7971a"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#fff8ea" stop-opacity="0.98"/>
+      <stop offset="100%" stop-color="#f0dfbd" stop-opacity="0.92"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <circle cx="1328" cy="146" r="180" fill="#ffe0a0" fill-opacity="0.2"/>
+  <g stroke="#ffffff" stroke-opacity="0.11">
+    <path d="M0 168H1600M0 330H1600M0 492H1600M0 654H1600"/>
+    <path d="M216 0V900M476 0V900M736 0V900M996 0V900M1256 0V900"/>
+  </g>
+
+  <rect x="88" y="104" width="890" height="694" rx="40" fill="url(#panel)"/>
+  <rect x="1022" y="144" width="486" height="616" rx="36" fill="#220808" fill-opacity="0.86" stroke="#ffd07a" stroke-opacity="0.34"/>
+
+  <text x="146" y="188" fill="#8e1b00" font-family="Rubik, Arial, sans-serif" font-size="26" font-weight="700" letter-spacing="5">BADGER AUTOMATION GROUP</text>
+  <text x="146" y="278" fill="#220707" font-family="Rubik, Arial, sans-serif" font-size="68" font-weight="800">West Allis and Milwaukee</text>
+  <text x="146" y="350" fill="#220707" font-family="Rubik, Arial, sans-serif" font-size="68" font-weight="800">businesses: fix Google</text>
+  <text x="146" y="424" fill="#a60000" font-family="Rubik, Arial, sans-serif" font-size="74" font-weight="800">Business Profile before</text>
+  <text x="146" y="500" fill="#a60000" font-family="Rubik, Arial, sans-serif" font-size="74" font-weight="800">Wisconsin State Fair traffic</text>
+  <text x="146" y="578" fill="#4d2921" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">Special hours, categories, photos, posts, reviews, and landing pages</text>
+  <text x="146" y="616" fill="#4d2921" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="500">for operators whose local intent changes when fair week hits West Allis.</text>
+
+  <g transform="translate(1070 190)">
+    <rect x="0" y="0" width="238" height="320" rx="28" fill="#fff8ec"/>
+    <rect x="28" y="30" width="182" height="46" rx="12" fill="#8d1111"/>
+    <rect x="28" y="102" width="146" height="18" rx="9" fill="#d8bc9a"/>
+    <rect x="28" y="136" width="168" height="18" rx="9" fill="#d8bc9a"/>
+    <rect x="28" y="170" width="130" height="18" rx="9" fill="#d8bc9a"/>
+    <rect x="28" y="214" width="182" height="78" rx="18" fill="#f0dfc2"/>
+    <path d="M62 284C62 246 90 216 126 212C162 216 190 246 190 284" fill="none" stroke="#9a6a39" stroke-width="10" stroke-linecap="round"/>
+    <circle cx="126" cy="284" r="58" fill="none" stroke="#9a6a39" stroke-width="8"/>
+    <circle cx="126" cy="284" r="12" fill="#d99518"/>
+    <path d="M126 226V342M70 284H182M84 242L168 326M168 242L84 326" stroke="#9a6a39" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(1052 534)">
+    <rect x="0" y="26" width="410" height="164" rx="34" fill="#f2e0be"/>
+    <rect x="34" y="64" width="146" height="96" rx="18" fill="#ffffff"/>
+    <rect x="204" y="66" width="166" height="18" rx="9" fill="#b4875b"/>
+    <rect x="204" y="98" width="148" height="18" rx="9" fill="#b4875b"/>
+    <rect x="204" y="130" width="138" height="18" rx="9" fill="#b4875b"/>
+    <path d="M106 94C106 76 92 62 74 62C56 62 42 76 42 94C42 122 74 148 74 148S106 122 106 94Z" fill="#ffd173"/>
+    <circle cx="74" cy="94" r="12" fill="#8d100f"/>
+  </g>
+
+  <g transform="translate(1154 88)">
+    <circle cx="72" cy="72" r="72" fill="#ffd173" fill-opacity="0.92"/>
+    <circle cx="72" cy="72" r="54" fill="none" stroke="#7f1111" stroke-width="10"/>
+    <circle cx="72" cy="72" r="10" fill="#7f1111"/>
+    <path d="M72 18V126M18 72H126M34 34L110 110M110 34L34 110" stroke="#7f1111" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <text x="146" y="714" fill="#8e1b00" font-family="Rubik, Arial, sans-serif" font-size="22" font-weight="700" letter-spacing="4">EVENT-WEEK CHECKLIST</text>
+  <text x="146" y="760" fill="#220707" font-family="Rubik, Arial, sans-serif" font-size="28" font-weight="600">Special hours · Categories · Photos · Posts · Reviews · Landing pages</text>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">West Allis and Milwaukee State Fair Google Business Profile social card</title>
+  <desc id="desc">Badger Automation Group social image for a Google Business Profile article about Wisconsin State Fair traffic.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#130303"/>
+      <stop offset="54%" stop-color="#881010"/>
+      <stop offset="100%" stop-color="#dd9b1d"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1008" cy="108" r="176" fill="#ffe0a0" fill-opacity="0.17"/>
+  <g stroke="#ffffff" stroke-opacity="0.12">
+    <path d="M0 158H1200M0 314H1200M0 470H1200"/>
+    <path d="M176 0V630M366 0V630M556 0V630M746 0V630M936 0V630"/>
+  </g>
+
+  <rect x="64" y="64" width="730" height="504" rx="30" fill="#fff7e8" fill-opacity="0.97"/>
+  <text x="104" y="126" fill="#8e1b00" font-family="Rubik, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="4">BADGER AUTOMATION GROUP</text>
+  <text x="104" y="206" fill="#220707" font-family="Rubik, Arial, sans-serif" font-size="51" font-weight="800">Fix your GBP before</text>
+  <text x="104" y="268" fill="#220707" font-family="Rubik, Arial, sans-serif" font-size="51" font-weight="800">Wisconsin State Fair</text>
+  <text x="104" y="330" fill="#a60000" font-family="Rubik, Arial, sans-serif" font-size="55" font-weight="800">traffic starts</text>
+  <text x="104" y="404" fill="#56312a" font-family="Rubik, Arial, sans-serif" font-size="27" font-weight="500">Special hours, categories, photos, posts, reviews,</text>
+  <text x="104" y="440" fill="#56312a" font-family="Rubik, Arial, sans-serif" font-size="27" font-weight="500">and landing pages for West Allis and Milwaukee operators.</text>
+
+  <g transform="translate(840 104)">
+    <rect x="0" y="0" width="288" height="412" rx="30" fill="#1d0707" fill-opacity="0.86" stroke="#ffd17a" stroke-opacity="0.42"/>
+    <rect x="28" y="28" width="232" height="54" rx="14" fill="#fff8ea"/>
+    <rect x="46" y="44" width="90" height="18" rx="8" fill="#a11212"/>
+    <rect x="28" y="106" width="182" height="18" rx="8" fill="#b98f8f"/>
+    <rect x="28" y="140" width="166" height="18" rx="8" fill="#b98f8f"/>
+    <rect x="28" y="174" width="148" height="18" rx="8" fill="#b98f8f"/>
+    <rect x="28" y="222" width="232" height="150" rx="22" fill="#f1e0c1"/>
+    <path d="M80 346C80 296 118 256 166 250C214 256 252 296 252 346" fill="none" stroke="#8c6239" stroke-width="12" stroke-linecap="round"/>
+    <circle cx="166" cy="344" r="76" fill="none" stroke="#8c6239" stroke-width="10"/>
+    <circle cx="166" cy="344" r="14" fill="#ffb52d"/>
+    <path d="M166 268V420M90 344H242M112 290L220 398M220 290L112 398" stroke="#8c6239" stroke-width="8" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(890 36)">
+    <path d="M0 44C0 19 20 0 45 0S90 19 90 44C90 83 45 118 45 118S0 83 0 44Z" fill="#ffd98b"/>
+    <circle cx="45" cy="44" r="16" fill="#7f1111"/>
+  </g>
+
+  <text x="836" y="560" fill="#fff1d2" font-family="Rubik, Arial, sans-serif" font-size="18" font-weight="600" letter-spacing="3">WEST ALLIS · MILWAUKEE · GBP · STATE FAIR</text>
+</svg>
