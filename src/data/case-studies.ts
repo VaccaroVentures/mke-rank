@@ -49,7 +49,7 @@ export const caseStudies: CaseStudy[] = [
     heroMetrics: [
       { value: '17', label: 'Qualified service requests', note: 'Website form, Aug 2 – Oct 27, 2026' },
       { value: '5', label: 'Install or replacement requests', note: 'Boilers, furnace + AC, mini-split, AC install' },
-      { value: '5.0★', label: 'Google rating', note: '239 reviews' },
+      { value: '5.0★', label: 'Google rating', note: '239 reviews, up from 226 in late August' },
       { value: '24', label: 'Service and city pages', note: '8 service pages + 16 city pages' },
     ],
     challenge: [
@@ -78,6 +78,16 @@ export const caseStudies: CaseStudy[] = [
           'The Google reputation E & R already earned is shown on the homepage, alongside BBB accreditation, licensing, and 24/7 emergency service.',
       },
       {
+        title: 'Google Business Profile management',
+        detail:
+          'We manage the listing that drives most local HVAC calls: services, hours, photos, and the details Google uses to rank E & R in the map pack.',
+      },
+      {
+        title: 'Review requests and owner replies',
+        detail:
+          'We run review management for E & R, including timely, personal replies to new reviews. The profile grew from 226 to 239 reviews at a perfect 5.0 since late August.',
+      },
+      {
         title: 'Seasonal HVAC content',
         detail:
           'A tips blog covering furnace problems, AC maintenance, and replacement guides for Milwaukee homeowners.',
@@ -99,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
     reputation: {
       rating: '5.0',
       count: 239,
-      note: 'Google Business Profile, as of October 27, 2026',
+      note: 'Up from 226 in late August · Google, as of October 27, 2026',
     },
     reviews: [
       {
@@ -115,7 +125,7 @@ export const caseStudies: CaseStudy[] = [
     ],
     // traffic: [ { value: '', label: 'Organic sessions', note: 'GA4, ...' } ],
     // search: [ { value: '', label: 'Google search impressions', note: 'Search Console, ...' } ],
-    services: ['Website design and build', 'Local SEO', 'Service-area pages', 'Lead capture', 'Hosting'],
+    services: ['Website design and build', 'Google Business Profile', 'Review management', 'Local SEO', 'Service-area pages', 'Lead capture'],
   },
 ];
 
