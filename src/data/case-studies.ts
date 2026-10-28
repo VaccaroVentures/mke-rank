@@ -29,6 +29,7 @@ export type CaseStudy = {
   leadNote: string;
   reputation: { rating: string; count: number; note: string };
   reviews: Review[];
+  ownerQuote?: { quote: string; attribution: string };
   traffic?: Metric[];
   search?: Metric[];
   services: string[];
@@ -111,6 +112,7 @@ export const caseStudies: CaseStudy[] = [
       count: 239,
       note: 'Up from 9 in December 2024 · Google, as of October 27, 2026',
     },
+    ownerQuote: { quote: "Busiest I've ever been.", attribution: 'Owner, E & R Heating and Cooling' },
     reviews: [
       {
         quote: 'Our AC was fixed and blowing cold air like it was new.',

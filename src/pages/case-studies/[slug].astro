@@ -69,6 +69,21 @@ const jsonLd = [
       </div>
     </section>
 
+    {
+      study.ownerQuote && (
+        <section class="border-b border-badger/8 bg-white py-14 md:py-20">
+          <figure class="mx-auto max-w-4xl px-4 text-center md:px-6">
+            <blockquote class="font-display text-4xl font-semibold text-ink md:text-6xl">
+              “{study.ownerQuote.quote}”
+            </blockquote>
+            <figcaption class="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-badger/60">
+              {study.ownerQuote.attribution}
+            </figcaption>
+          </figure>
+        </section>
+      )
+    }
+
     <!-- Challenge + built -->
     <section class="bg-paper py-16 md:py-24">
       <div class="mx-auto grid max-w-6xl gap-12 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
