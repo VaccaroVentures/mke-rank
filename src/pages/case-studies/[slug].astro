@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+import { caseStudies, type CaseStudy } from '../../data/case-studies';
+import { organizationSchema } from '../../data/seo';
+
+export function getStaticPaths() {
+  return caseStudies.map((c) => ({ params: { slug: c.slug }, props: { study: c } }));
+}
+
+const { study } = Astro.props as { study: CaseStudy };
+const canonicalPath = `/case-studies/${study.slug}/`;
+const pageUrl = new URL(canonicalPath, site.url).toString();
+const totalLeads = study.leadsByMonth.reduce((n, m) => n + m.count, 0);
+const maxMonth = Math.max(...study.leadsByMonth.map((m) => m.count));
+const maxMix = Math.max(...study.leadMix.map((m) => m.count));
+const description = `${study.client} case study: ${study.headline}. ${study.reputation.rating}-star Google rating across ${study.reputation.count} reviews.`;
+
+const jsonLd = [
+  organizationSchema(),
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: `${study.client}: ${study.headline}`,
+    description,
+    url: pageUrl,
+    author: { '@type': 'Organization', name: site.name },
+    publisher: { '@type': 'Organization', name: site.name },
+    about: { '@type': 'LocalBusiness', name: study.client, url: study.url },
+  },
+];
+---
+
+<BaseLayout
+  title={`${study.client} Case Study | Badger Automation Group`}
+  description={description}
+  canonicalPath={canonicalPath}
+  keywords={`${study.industry} marketing case study, ${study.client}, local SEO results, Milwaukee ${study.industry} website`}
+  jsonLd={jsonLd}
+  ogType="article"
+>
+  <article>
+    <!-- Hero -->
+    <section class="relative overflow-hidden bg-ink text-paper">
+      <div class="pointer-events-none absolute inset-0 bg-grid-fine bg-grid opacity-30" aria-hidden="true"></div>
+      <div class="pointer-events-none absolute inset-0 bg-hero-glow" aria-hidden="true"></div>
+      <div class="relative mx-auto max-w-6xl px-4 py-16 md:px-6 md:py-24">
+        <a href="/case-studies/" class="text-sm font-medium text-paper/60 hover:text-paper">← All case studies</a>
+        <p class="mt-6 text-[11px] font-bold uppercase tracking-[0.22em] text-paper/50">
+          Case study · {study.industry} · {study.location}
+        </p>
+        <h1 class="mt-4 max-w-4xl font-display text-4xl font-semibold leading-tight md:text-5xl text-balance">
+          {study.client}: {study.headline}
+        </h1>
+        <p class="mt-6 max-w-2xl text-lg text-paper/70">{study.summary}</p>
+
+        <dl class="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          {
+            study.heroMetrics.map((m) => (
+              <div class="rounded-2xl border border-paper/10 bg-paper/[0.05] p-5">
+                <dd class="font-display text-4xl font-bold text-white md:text-5xl">{m.value}</dd>
+                <dt class="mt-2 text-sm font-semibold text-paper/85">{m.label}</dt>
+                {m.note && <p class="mt-1 text-xs text-paper/50">{m.note}</p>}
+              </div>
+            ))
+          }
+        </dl>
+        <p class="mt-6 text-xs text-paper/45">Data as of {study.asOf}.</p>
+      </div>
+    </section>
+
+    <!-- Challenge + built -->
+    <section class="bg-paper py-16 md:py-24">
+      <div class="mx-auto grid max-w-6xl gap-12 px-4 md:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
+        <div>
+          <h2 class="font-display text-3xl font-semibold text-ink">The starting point</h2>
+          <div class="mt-6 space-y-4 leading-relaxed text-badger/80">
+            {study.challenge.map((p) => <p>{p}</p>)}
+          </div>
+          <ul class="mt-8 flex flex-wrap gap-2" aria-label="Services provided">
+            {
+              study.services.map((s) => (
+                <li class="rounded-full border border-badger/15 bg-white px-3 py-1 text-xs font-semibold text-badger">
+                  {s}
+                </li>
+              ))
+            }
+          </ul>
+        </div>
+        <div>
+          <h2 class="font-display text-3xl font-semibold text-ink">What we built</h2>
+          <ol class="mt-6 space-y-4">
+            {
+              study.built.map((b, i) => (
+                <li class="flex gap-4 rounded-2xl border border-badger/10 bg-white p-5 shadow-card">
+                  <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-badger font-display text-sm font-bold text-white">
+                    {i + 1}
+                  </span>
+                  <div>
+                    <h3 class="font-semibold text-ink">{b.title}</h3>
+                    <p class="mt-1 text-sm leading-relaxed text-badger/75">{b.detail}</p>
+                  </div>
+                </li>
+              ))
+            }
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leads -->
+    <section class="border-t border-badger/8 bg-white py-16 md:py-24" aria-labelledby="leads-heading">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <h2 id="leads-heading" class="font-display text-3xl font-semibold text-ink">The results: real quote requests</h2>
+        <p class="mt-4 max-w-2xl text-badger/75">
+          {totalLeads} homeowners and property owners requested service through the website form, with volume rising as
+          heating season started.
+        </p>
+
+        <div class="mt-10 grid gap-8 lg:grid-cols-2">
+          <figure class="rounded-2xl border border-badger/10 bg-paper p-6">
+            <figcaption class="text-sm font-semibold text-ink">Qualified requests by month</figcaption>
+            <div class="mt-6 flex h-48 items-end gap-6" role="img" aria-label={study.leadsByMonth.map((m) => `${m.month}: ${m.count}`).join(', ')}>
+              {
+                study.leadsByMonth.map((m) => (
+                  <div class="flex flex-1 flex-col items-center gap-2">
+                    <span class="text-sm font-bold text-ink">{m.count}</span>
+                    <div
+                      class={`w-full max-w-20 rounded-t-lg ${m.partial ? 'bg-badger/60' : 'bg-badger'}`}
+                      style={`height: ${Math.max(8, (m.count / maxMonth) * 140)}px`}
+                    />
+                    <span class="text-xs font-medium text-badger/70">
+                      {m.month}
+                      {m.partial && '*'}
+                    </span>
+                  </div>
+                ))
+              }
+            </div>
+            {study.leadsByMonth.some((m) => m.partial) && (
+              <p class="mt-4 text-xs text-badger/55">* Month in progress</p>
+            )}
+          </figure>
+
+          <figure class="rounded-2xl border border-badger/10 bg-paper p-6">
+            <figcaption class="text-sm font-semibold text-ink">What homeowners asked for</figcaption>
+            <ul class="mt-6 space-y-4">
+              {
+                study.leadMix.map((m) => (
+                  <li>
+                    <div class="flex justify-between text-sm">
+                      <span class="text-badger/80">{m.label}</span>
+                      <span class="font-bold text-ink">{m.count}</span>
+                    </div>
+                    <div class="mt-1.5 h-2.5 rounded-full bg-badger/10">
+                      <div class="h-2.5 rounded-full bg-badger" style={`width: ${(m.count / maxMix) * 100}%`} />
+                    </div>
+                  </li>
+                ))
+              }
+            </ul>
+          </figure>
+        </div>
+        <p class="mt-6 max-w-3xl text-xs leading-relaxed text-badger/55">{study.leadNote}</p>
+
+        {
+          (study.traffic || study.search) && (
+            <dl class="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-4">
+              {[...(study.traffic ?? []), ...(study.search ?? [])].map((m) => (
+                <div class="rounded-2xl border border-badger/10 bg-paper p-5">
+                  <dd class="font-display text-3xl font-bold text-badger">{m.value}</dd>
+                  <dt class="mt-2 text-sm font-semibold text-ink">{m.label}</dt>
+                  {m.note && <p class="mt-1 text-xs text-badger/55">{m.note}</p>}
+                </div>
+              ))}
+            </dl>
+          )
+        }
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section class="bg-ink py-16 text-paper md:py-24" aria-labelledby="reviews-heading">
+      <div class="mx-auto max-w-6xl px-4 md:px-6">
+        <div class="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div>
+            <h2 id="reviews-heading" class="font-display text-3xl font-semibold">What their customers say</h2>
+            <p class="mt-3 max-w-xl text-paper/65">
+              The site puts E &amp; R's reputation where homeowners can see it before they call.
+            </p>
+          </div>
+          <div class="rounded-2xl border border-paper/10 bg-paper/[0.05] px-6 py-4">
+            <p class="font-display text-4xl font-bold">
+              {study.reputation.rating}<span class="text-[#ffb84d]" aria-hidden="true"> ★★★★★</span>
+            </p>
+            <p class="mt-1 text-sm text-paper/70">{study.reputation.count} Google reviews</p>
+            <p class="text-xs text-paper/45">{study.reputation.note}</p>
+          </div>
+        </div>
+
+        <div class="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          {
+            study.reviews.map((r) => (
+              <figure class="flex flex-col rounded-2xl border border-paper/10 bg-paper/[0.04] p-6">
+                <p class="text-[#ffb84d]" aria-label="5 stars">★★★★★</p>
+                <blockquote class="mt-3 flex-1 leading-relaxed text-paper/85">“{r.quote}”</blockquote>
+                <figcaption class="mt-4 text-sm">
+                  <span class="font-semibold text-paper">{r.name}</span>
+                  <span class="text-paper/45"> · Google review</span>
+                  {r.context && <span class="mt-0.5 block text-xs text-paper/50">{r.context}</span>}
+                </figcaption>
+              </figure>
+            ))
+          }
+        </div>
+        {
+          study.googleMapsUrl && (
+            <a
+              href={study.googleMapsUrl}
+              rel="noopener"
+              target="_blank"
+              class="mt-8 inline-block text-sm font-semibold text-paper/80 underline decoration-accent/70 underline-offset-4 hover:text-paper"
+            >
+              Read all {study.reputation.count} reviews on Google →
+            </a>
+          )
+        }
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-badger py-16 text-paper md:py-20">
+      <div class="mx-auto flex max-w-6xl flex-col items-start gap-6 px-4 md:flex-row md:items-center md:justify-between md:px-6">
+        <div>
+          <h2 class="font-display text-2xl font-semibold md:text-3xl">Run a home services business in SE Wisconsin?</h2>
+          <p class="mt-2 text-paper/75">See what your website and Google profile could be bringing in.</p>
+        </div>
+        <div class="flex flex-wrap gap-3">
+          <a
+            href="/contact/"
+            class="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-bold uppercase tracking-wider text-[#1a0000] transition hover:bg-white/90"
+          >
+            Book a call
+          </a>
+          <a
+            href={study.url}
+            rel="noopener"
+            target="_blank"
+            class="inline-flex items-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+          >
+            Visit their site
+          </a>
+        </div>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

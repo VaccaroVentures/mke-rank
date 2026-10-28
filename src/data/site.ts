@@ -25,6 +25,7 @@ export const mainNav: NavItem[] = [
   { label: 'Areas', href: '/areas/' },
   { label: 'Industries', href: '/home-services/' },
   { label: 'Locations', href: '/locations/' },
+  { label: 'Results', href: '/case-studies/' },
   { label: 'Pricing', href: '/pricing/' },
   { label: 'Insights', href: '/blog/' },
   { label: 'About', href: '/about/' },
