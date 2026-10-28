@@ -43,17 +43,17 @@ export const caseStudies: CaseStudy[] = [
     url: 'https://eandrheatingandcooling.com',
     googleMapsUrl: 'https://www.google.com/maps/place/E+%26+R+Heating+and+Cooling/@43.0111289,-88.012094,17z',
     summary:
-      'A family-owned West Allis HVAC company with a 5-star reputation and a website that now turns local searches into quote requests.',
-    headline: '17 qualified service requests in 12 weeks from a new HVAC website',
+      'A family-owned West Allis HVAC company that went from 9 Google reviews to 239 at a perfect 5.0, with a website that now turns local searches into quote requests.',
+    headline: 'From 9 to 239 Google reviews, plus 17 quote requests in 12 weeks',
     asOf: 'October 27, 2026',
     heroMetrics: [
+      { value: '9 → 239', label: 'Google reviews', note: 'Dec 2024 → Oct 2026, 5.0★ average' },
       { value: '17', label: 'Qualified service requests', note: 'Website form, Aug 2 – Oct 27, 2026' },
       { value: '5', label: 'Install or replacement requests', note: 'Boilers, furnace + AC, mini-split, AC install' },
-      { value: '5.0★', label: 'Google rating', note: '239 reviews, up from 226 in late August' },
       { value: '24', label: 'Service and city pages', note: '8 service pages + 16 city pages' },
     ],
     challenge: [
-      'E & R has served Milwaukee County since 2003 and earned a 5.0 Google rating the hard way: same-day service, honest diagnoses, and fair pricing.',
+      'E & R has served Milwaukee County since 2003 on same-day service, honest diagnoses, and fair pricing. But when we started working together in December 2024, their Google Business Profile had just 9 reviews, so homeowners comparing HVAC companies online had little reason to pick them.',
       'The goal was a website that matches that reputation: a clear page for every service a homeowner might search for, coverage for the suburbs E & R actually works in, and an easy way to request a quote at any hour.',
     ],
     built: [
@@ -85,7 +85,7 @@ export const caseStudies: CaseStudy[] = [
       {
         title: 'Review requests and owner replies',
         detail:
-          'We run review management for E & R, including timely, personal replies to new reviews. The profile grew from 226 to 239 reviews at a perfect 5.0 since late August.',
+          'A consistent process for asking every happy customer for a review, plus timely, personal replies to each one. The profile grew from 9 reviews in December 2024 to 239, holding a perfect 5.0.',
       },
       {
         title: 'Seasonal HVAC content',
@@ -109,7 +109,7 @@ export const caseStudies: CaseStudy[] = [
     reputation: {
       rating: '5.0',
       count: 239,
-      note: 'Up from 226 in late August · Google, as of October 27, 2026',
+      note: 'Up from 9 in December 2024 · Google, as of October 27, 2026',
     },
     reviews: [
       {
